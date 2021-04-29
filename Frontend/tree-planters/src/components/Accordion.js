@@ -1,6 +1,7 @@
 import React from 'react'
+//Uses material ui
 
-export const Footer = () => {
+export const Accordion = () => {
     return (
         <div>
             

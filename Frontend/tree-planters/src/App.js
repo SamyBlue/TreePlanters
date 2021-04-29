@@ -6,13 +6,15 @@ function App() {
 			{/* Main app 
       <StickyAppBar />
       
-      <Homepage />
-       
-      <Tiles />
+      <UserDashboard />*
+
+      <DefaultDashboard />
+      
+      <ContentTiles />
 
       <About />
 
-      <Footer />
+      <Footer />*Uses accordion.js
       */}
 
 			<StickyAppBar />
