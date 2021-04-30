@@ -21,10 +21,11 @@ code {
 
 .Tile {
   width: 50%;
-  height: 400px;
+  height: 450px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 
 .Tile img {

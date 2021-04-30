@@ -9,7 +9,7 @@ const ContentTiles = () => {
             </div>
             <div className="Tile" style={{backgroundColor:"#dbb95f"}}>
                 
-                <h2></h2>
+                <h2>Saving the planet, one tree at a time...</h2>
                 <p></p>
 
             </div>
@@ -21,7 +21,17 @@ const ContentTiles = () => {
             </div>
             <div className="Tile" style={{backgroundColor:"#878533"}}>
                 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuw_2Erm4m7-2kSCCvmQg2amK7Yr4K50InfQ&usqp=CAU"/>
+                <img src="https://img.chooseacottage.co.uk/property/rof/840/rofo-11b_21.jpg"/>
+            </div>
+            <div className="Tile" style={{backgroundColor:"#6cbe30"}}>
+                
+                <img src="https://assets.weforum.org/article/image/rbMwmoo90af-EroZs1TPRvEZFaOrpXGq7arIzFJsmSI.jpg"/>
+            </div>
+            <div className="Tile" style={{backgroundColor:"#6cbe30"}}>
+                
+                <h2></h2>
+                <p></p>
+
             </div>
             
         </div>
