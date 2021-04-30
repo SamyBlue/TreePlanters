@@ -9,14 +9,14 @@ const ContentTiles = () => {
             </div>
             <div className="Tile" style={{backgroundColor:"#dbb95f"}}>
                 
-                <h2>Saving the planet, one tree at a time...</h2>
-                <p></p>
+                <h2 className="TileText">Saving the planet, one tree at a time...</h2>
+                <p className="TileText">A typical tree can absorb around 21 kilograms of carbon dioxide per year once fully grown. Over a lifetime of 100 years, one tree could absorb around a tonne of CO2.</p>
 
             </div>
             <div className="Tile" style={{backgroundColor:"#432e14"}}>
                 
-                <h2></h2>
-                <p></p>
+                <h2 className="TileText">Saving the planet, one tree at a time...</h2>
+                <p className="TileText">A typical tree can absorb around 21 kilograms of carbon dioxide per year once fully grown. Over a lifetime of 100 years, one tree could absorb around a tonne of CO2.</p>
 
             </div>
             <div className="Tile" style={{backgroundColor:"#878533"}}>
@@ -29,8 +29,8 @@ const ContentTiles = () => {
             </div>
             <div className="Tile" style={{backgroundColor:"#6cbe30"}}>
                 
-                <h2></h2>
-                <p></p>
+                <h2 className="TileText">Saving the planet, one tree at a time...</h2>
+                <p className="TileText">A typical tree can absorb around 21 kilograms of carbon dioxide per year once fully grown. Over a lifetime of 100 years, one tree could absorb around a tonne of CO2.</p>
 
             </div>
             
