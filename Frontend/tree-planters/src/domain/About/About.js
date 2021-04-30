@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'block',
         marginLeft: 'auto',
-	    marginRight: 'auto',
+	      marginRight: 'auto',
         width: '60%',
+
     },
     heading: {
       fontSize: theme.typography.pxToRem(15),
@@ -40,8 +41,7 @@ const About = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-                maximus est, id dignissim quam.
+                Tree planters makes it easy to help reforestation through an intuitive user interface. You don't even need an account!
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -55,8 +55,7 @@ const About = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-                diam eros in elit. Pellentesque convallis laoreet laoreet.
+                Helping reforestation is a great start! Reduce, reuse and recycle.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -70,8 +69,7 @@ const About = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros,
-                vitae egestas augue. Duis vel est augue.
+                You can choose which reforestation project you would like to help out when you donate. Create an account and you can see where your trees are on the map.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -85,8 +83,7 @@ const About = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros,
-                vitae egestas augue. Duis vel est augue.
+                Your donation goes straight towards planting trees. For a more detailed breakdown, please check the website of the reforestation project you donated to.
               </Typography>
             </AccordionDetails>
           </Accordion>
