@@ -1,0 +1,62 @@
+.DefaultDashboard {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	border-width: medium;
+	border-style: solid;
+	border-color: #dbb95f;
+	width: 60%;
+	padding-bottom: 1rem;
+}
+
+.DefaultDashboard > Button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16%;
+	padding-right: 16%;
+}
+
+.DashboardCards {
+	display: flex;
+	justify-content: space-around;
+	padding: 1rem;
+}
+
+.DashboardCard {
+	border-width: medium;
+	border-style: solid;
+	border-color: #dbb95f;
+	text-align: center;
+	padding: 0.5rem;
+	flex-basis: 100%;
+	margin: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+	.DashboardCards {
+		flex-direction: column;
+	}
+	.DefaultDashboard {
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.DefaultDashboard {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.DefaultDashboard {
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.DefaultDashboard {
+		width: 60%;
+	}
+}

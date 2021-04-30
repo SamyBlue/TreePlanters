@@ -18,33 +18,27 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function ButtonAppBar({ openLoginPopup, userState }) {
+export default function StickyAppBar({ openLoginPopup, userState }) {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.root}>
-			<AppBar>
+			<AppBar
+				position='static'
+				style={{ backgroundColor: 'rgb(135, 133, 50)' }}
+			>
 				<Toolbar>
-					<Typography>
-						<img
-							/* src={} */
-							alt='circle-lakers-themed-logo'
-							width='60'
-							height='60'
-						/>
-					</Typography>
+					<img
+						src='./logo.jpg'
+						alt='TreePlanters-logo'
+						width='60'
+						height='60'
+					/>
 					<Typography variant='h6' className={classes.title}>
 						Tree Planters
 					</Typography>
-					<Button
-						color='inherit'
-						/* onClick={userState.id === -1 ? openLoginPopup : undefined} */
-					>
-						{/* {userState.id === -1
-							? 'Login/Register'
-							: `Hello, ${userState.username}! Logout`} */}
-						<MenuIcon />
-					</Button>
+					<Button style={{ backgroundColor: '#DBB95F' }}>Donate</Button>
+					<Button style={{ backgroundColor: '#DBB95F' }}>Login</Button>
 				</Toolbar>
 			</AppBar>
 		</div>

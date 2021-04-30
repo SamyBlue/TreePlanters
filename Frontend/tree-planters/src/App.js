@@ -1,4 +1,5 @@
 import StickyAppBar from './components/StickyAppBar';
+import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
 
 function App() {
 	return (
@@ -7,7 +8,7 @@ function App() {
       <StickyAppBar />
       
       <UserDashboard />*
-
+>
       <DefaultDashboard />
       
       <ContentTiles />
@@ -18,6 +19,8 @@ function App() {
       */}
 
 			<StickyAppBar />
+
+			<DefaultDashboard />
 		</div>
 	);
 }
