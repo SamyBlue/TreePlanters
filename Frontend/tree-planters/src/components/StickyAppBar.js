@@ -23,10 +23,7 @@ export default function StickyAppBar({ openLoginPopup, userState }) {
 
 	return (
 		<div className={classes.root}>
-			<AppBar
-				position='static'
-				style={{ backgroundColor: 'rgb(135, 133, 50)' }}
-			>
+			<AppBar style={{ backgroundColor: 'rgb(135, 133, 50)' }}>
 				<Toolbar>
 					<img
 						src='./logo.jpg'
