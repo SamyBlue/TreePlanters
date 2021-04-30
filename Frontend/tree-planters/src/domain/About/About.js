@@ -36,10 +36,11 @@ const About = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
+              style={{ backgroundColor: '#DAB85F' }}
             >
               <Typography className={classes.heading}>Why did we create Tree Planters?</Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails style={{ backgroundColor: '#DAB85F' }}> 
               <Typography>
                 Tree planters makes it easy to help reforestation through an intuitive user interface. You don't even need an account!
               </Typography>
@@ -50,11 +51,12 @@ const About = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2bh-content"
               id="panel2bh-header"
+              style={{ backgroundColor: '#7F5F16' }}
             >
-              <Typography className={classes.heading}>How can I reduce my carbon footprint?</Typography>
+              <Typography className={classes.heading} style={{ color: 'white'}}>How can I reduce my carbon footprint?</Typography>
             </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
+            <AccordionDetails style={{ backgroundColor: '#7F5F16' }}>
+              <Typography style={{ color: 'white'}}>
                 Helping reforestation is a great start! Reduce, reuse and recycle.
               </Typography>
             </AccordionDetails>
@@ -64,10 +66,11 @@ const About = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel3bh-content"
               id="panel3bh-header"
+              style={{ backgroundColor: '#DAB85F' }}
             >
               <Typography className={classes.heading}>Where are the trees planted?</Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails style={{ backgroundColor: '#DAB85F' }}>
               <Typography>
                 You can choose which reforestation project you would like to help out when you donate. Create an account and you can see where your trees are on the map.
               </Typography>
@@ -78,11 +81,12 @@ const About = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel4bh-content"
               id="panel4bh-header"
+              style={{ backgroundColor: '#7F5F16' }}
             >
-              <Typography className={classes.heading}>How is my donation spent?</Typography>
+              <Typography className={classes.heading} style={{ color: 'white'}}>How is my donation spent?</Typography>
             </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
+            <AccordionDetails style={{ backgroundColor: '#7F5F16' }}>
+              <Typography style={{ color: 'white'}}>
                 Your donation goes straight towards planting trees. For a more detailed breakdown, please check the website of the reforestation project you donated to.
               </Typography>
             </AccordionDetails>
