@@ -1,4 +1,5 @@
 import React from 'react'
+import './ContentTiles.css';
 
 const ContentTiles = () => {
     return (
