@@ -1,71 +1,17 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url('./background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
-
-/* .ContentTiles {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.Tile {
-  width: 50%;
-  height: 450px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  text-align: center;
-  overflow: none;
-}
-
-.TileText {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6rem;
-}
-
-.Tile img {
-  height: 100%;
-  width: 800px;
-}
-
-@media only screen and (max-width: 600px) {
-  .ContentTiles {
-    flex-direction: column;
-  }
-  .Tile {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .TileText {
-    margin-top: 3rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .TileText {
-    margin-top: 6rem;
-  }
-} */
-/* 
-@media only screen and (min-width: 992px) {
-	.DefaultDashboard {
-		width: 60%;
-	}
-} */
