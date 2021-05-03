@@ -43,7 +43,7 @@ const DefaultDashboard = () => {
             <img src="growingtree.gif" alt="growing tree" />
             <div className="DashboardCard">
               <LooksOne />
-              <p>Trees Planted:</p>
+              <h3>Trees Planted:</h3>
               <p>{TREES_PLANTED}</p>
               <p>
                 200,000 acres of rainforest are burned every day. This is why
@@ -55,7 +55,7 @@ const DefaultDashboard = () => {
             <img src="foot.png" alt="carbon footprint" />
             <div className="DashboardCard">
               <LooksTwo />
-              <p>Carbon Saved:</p>
+              <h3>Carbon Saved:</h3>
               <p>{CARBON_SAVED} kg</p>
               <p>
                 A mature tree absorbs carbon dioxide at a rate of 21.8 kg per
@@ -68,7 +68,7 @@ const DefaultDashboard = () => {
             <img src="pig.png" alt="piggy bank" />
             <div className="DashboardCard">
               <Looks3 />
-              <p>Money Raised:</p>
+              <h3>Money Raised:</h3>
               <p>£{MONEY_RAISED}</p>
               <p>
                 Every pound matters! 100% of our profits go towards planting

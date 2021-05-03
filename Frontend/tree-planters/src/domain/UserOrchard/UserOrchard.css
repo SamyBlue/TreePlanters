@@ -1,0 +1,12 @@
+.UserForest {
+  text-align: center;
+  border-color: green;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.Trees {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
