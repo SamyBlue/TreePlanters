@@ -1,11 +1,12 @@
 import React from 'react';
 import './Tile.css';
+import { Parallax } from 'react-parallax';
 
 const Tile = ({ image, header, text, color, reversed }) => {
 	const imageTile = (
-		<div className='Tile' style={{ backgroundColor: '#6cbe30' }}>
-			<img src={image} alt='Nature' />
-		</div>
+		<Parallax bgImage={image} strength={800} className = 'Tile'>
+			<div />
+		</Parallax>
 	);
 
 	const textTile = (
