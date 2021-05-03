@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function StickyAppBar({ openLoginModal }) {
+export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 	const classes = useStyles();
 
 	return (
@@ -31,7 +31,7 @@ export default function StickyAppBar({ openLoginModal }) {
 					<Button
 						style={{ backgroundColor: '#DBB95F' }}
 						className={classes.menuButton}
-						/* onClick={} */
+						onClick={openDonateModal}
 					>
 						Donate
 					</Button>

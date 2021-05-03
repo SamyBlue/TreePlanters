@@ -3,9 +3,11 @@ import StickyAppBar from './components/StickyAppBar';
 import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
 import ContentTiles from './components/ContentTiles';
 import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
+import DonateModal from './domain/DonateModal/DonateModal';
 
 function App() {
 	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
+	const [donateModalOpen, setDonateModalOpen] = React.useState(false);
 
 	const openLoginModal = () => {
 		setLoginModalOpen(true);
@@ -13,6 +15,14 @@ function App() {
 
 	const closeLoginModal = () => {
 		setLoginModalOpen(false);
+	};
+
+	const openDonateModal = () => {
+		setDonateModalOpen(true);
+	};
+
+	const closeDonateModal = () => {
+		setDonateModalOpen(false);
 	};
 
 	return (
@@ -31,14 +41,19 @@ function App() {
 			<Footer />*Uses accordion.js
 			*/}
 
-			<StickyAppBar openLoginModal={openLoginModal} />
+			<StickyAppBar
+				openLoginModal={openLoginModal}
+				openDonateModal={openDonateModal}
+			/>
 
 			<LoginRegisterModal
 				open={loginModalOpen}
 				closeLoginModal={closeLoginModal}
 			/>
 
-			<DefaultDashboard />
+			<DonateModal open={donateModalOpen} closeDonateModal={closeDonateModal} />
+
+			<DefaultDashboard openDonateModal={openDonateModal}/>
 
 			<ContentTiles />
 		</div>

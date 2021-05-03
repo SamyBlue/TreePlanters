@@ -1,24 +1,26 @@
 import React from 'react';
+import Modal from '../../components/Modal';
 import Form from '../../components/Forms/Form';
 import FormSubmit from '../../components/Forms/FormSubmit';
 
-const LoginPage = ({ closeModal }) => {
+const Donate = ({ open, closeDonateModal }) => {
 	const [formFields, setFormFields] = React.useState({
-		Username: '',
-		'Password*': '',
+		'Donate Amount (£)': '',
+		'Voucher*': '',
+		'Postal Code': '',
 	});
 
 	return (
-		<div>
-			<h2>Welcome</h2>
+		<Modal open={open} closeModal={closeDonateModal}>
+			<h2>Thanks for your contribution</h2>
 			<Form formFields={formFields} setFormFields={setFormFields} />
 			<FormSubmit
-				label='Login'
-				attemptSubmitMsg='Logging in...'
+				label='Send'
+				attemptSubmitMsg='Sending...'
 				failedSubmitMsg="Some of your information isn't correct. Please try again."
 			/>
-		</div>
+		</Modal>
 	);
 };
 
-export default LoginPage;
+export default Donate;
