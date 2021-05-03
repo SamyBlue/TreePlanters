@@ -86,7 +86,7 @@ export default function Tabs({ arrayOfTabs, children }) {
 			>
 				{children.map((child, index) => (
 					<TabPanel value={value} index={index} dir={theme.direction}>
-						<child />
+						{child}
 					</TabPanel>
 				))}
 			</SwipeableViews>
