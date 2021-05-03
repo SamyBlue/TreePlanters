@@ -1,42 +1,41 @@
-
 .Tile {
-  width: 50%;
-  height: 450px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  text-align: center;
-  overflow: none;
+	width: 50%;
+	height: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	text-align: center;
+	overflow: none;
 }
 
 .TileText {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6rem;
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6rem;
 }
 
 .Tile img {
-  height: 100%;
-  width: 800px;
+	height: 100%;
+	width: 800px;
 }
 
 @media only screen and (max-width: 600px) {
-  .Tile {
-    width: 100%;
-  }
+	.Tile {
+		width: 100%;
+	}
 }
 
 @media only screen and (min-width: 600px) {
-  .TileText {
-    margin-top: 3rem;
-  }
+	.TileText {
+		margin-top: 3rem;
+	}
 }
 
 @media only screen and (min-width: 768px) {
-  .TileText {
-    margin-top: 6rem;
-  }
+	.TileText {
+		margin-top: 6rem;
+	}
 }

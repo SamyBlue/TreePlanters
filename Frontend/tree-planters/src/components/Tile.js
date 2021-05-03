@@ -1,13 +1,21 @@
 import React from 'react';
 import './Tile.css';
 import { Parallax } from 'react-parallax';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const Tile = ({ image, header, text, color, reversed }) => {
-	const imageTile = (
-		<Parallax bgImage={image} strength={800} className = 'Tile'>
-			<div />
-		</Parallax>
-	);
+	const { width } = useWindowDimensions();
+
+	const imageTile =
+		width > 750 ? (
+			<Parallax bgImage={image} strength={800} className='Tile'>
+				<div style={{ height: '450px' }} />
+			</Parallax>
+		) : (
+			<div className='Tile'>
+				<img src={image} alt='Nature' />
+			</div>
+		); //turns off parallax for mobile devices
 
 	const textTile = (
 		<div className='Tile' style={{ backgroundColor: color }}>
