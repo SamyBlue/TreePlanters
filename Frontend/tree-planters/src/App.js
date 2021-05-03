@@ -5,7 +5,7 @@ import ContentTiles from './components/ContentTiles';
 import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
 
 function App() {
-	const [loginModalOpen, setLoginModalOpen] = React.useState(true); //false
+	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
 
 	const openLoginModal = () => {
 		setLoginModalOpen(true);
@@ -31,7 +31,7 @@ function App() {
 			<Footer />*Uses accordion.js
 			*/}
 
-			<StickyAppBar />
+			<StickyAppBar openLoginModal={openLoginModal} />
 
 			<LoginRegisterModal
 				open={loginModalOpen}

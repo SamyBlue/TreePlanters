@@ -2,7 +2,7 @@ import React from 'react';
 import Form from '../../components/Forms/Form';
 import FormSubmit from '../../components/Forms/FormSubmit';
 
-const RegisterPage = () => {
+const RegisterPage = ({ closeModal }) => {
 	const [formFields, setFormFields] = React.useState({
 		Username: '',
 		'Password*': '',

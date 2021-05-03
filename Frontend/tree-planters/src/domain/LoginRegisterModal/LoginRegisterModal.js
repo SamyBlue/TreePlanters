@@ -8,8 +8,8 @@ const LoginRegisterModal = ({ open, closeLoginModal }) => {
 	return (
 		<Modal open={open} closeModal={closeLoginModal}>
 			<Tabs arrayOfTabs={['Login', 'Register']}>
-				<LoginPage />
-				<RegisterPage />
+				<LoginPage closeModal={closeLoginModal} />
+				<RegisterPage closeModal={closeLoginModal} />
 			</Tabs>
 		</Modal>
 	);

@@ -17,24 +17,31 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function StickyAppBar({ openLoginPopup, userState }) {
+export default function StickyAppBar({ openLoginModal }) {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.root}>
 			<AppBar style={{ backgroundColor: 'rgb(135, 133, 50)' }}>
 				<Toolbar>
-					<img
-						src='./logo.jpg'
-						alt='TreePlanters-logo'
-						width='60'
-						height='60'
-					/>
+					<img src='logo.jpg' alt='TreePlanters-logo' width='60' height='60' />
 					<Typography variant='h6' className={classes.title}>
 						Tree Planters
 					</Typography>
-					<Button style={{ backgroundColor: '#DBB95F' }}>Donate</Button>
-					<Button style={{ backgroundColor: '#DBB95F' }}>Login</Button>
+					<Button
+						style={{ backgroundColor: '#DBB95F' }}
+						className={classes.menuButton}
+						/* onClick={} */
+					>
+						Donate
+					</Button>
+					<Button
+						style={{ backgroundColor: '#DBB95F' }}
+						className={classes.menuButton}
+						onClick={openLoginModal}
+					>
+						Login
+					</Button>
 				</Toolbar>
 			</AppBar>
 		</div>
