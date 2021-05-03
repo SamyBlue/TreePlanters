@@ -1,6 +1,7 @@
 import React from 'react';
 import StickyAppBar from './components/StickyAppBar';
 import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
+import About from './domain/About/About';
 
 function App() {
 	return (
@@ -22,6 +23,8 @@ function App() {
 			<StickyAppBar />
 
 			<DefaultDashboard />
+
+      <About />
 		</div>
 	);
 }
