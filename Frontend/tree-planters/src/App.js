@@ -1,7 +1,7 @@
 import React from 'react';
 import StickyAppBar from './components/StickyAppBar';
 import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
-import ContentTiles from './components/ContentTiles';
+import ContentTiles from './domain/ContentTiles/ContentTiles';
 import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
 import DonateModal from './domain/DonateModal/DonateModal';
 

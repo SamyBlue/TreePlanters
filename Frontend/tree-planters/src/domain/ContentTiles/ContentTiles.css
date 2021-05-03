@@ -1,0 +1,13 @@
+.ContentTiles {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	background-color: blue; /* for testing */
+}
+
+@media only screen and (max-width: 600px) {
+	.ContentTiles {
+		flex-direction: column;
+	}
+}
