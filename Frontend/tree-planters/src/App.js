@@ -5,14 +5,14 @@ import ContentTiles from './components/ContentTiles';
 import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
 
 function App() {
-	const [loginPopupOpen, setLoginPopupOpen] = React.useState(false);
+	const [loginModalOpen, setLoginModalOpen] = React.useState(true); //false
 
-	const openLoginPopup = () => {
-		setLoginPopupOpen(true);
+	const openLoginModal = () => {
+		setLoginModalOpen(true);
 	};
 
-	const closeLoginPopup = () => {
-		setLoginPopupOpen(false);
+	const closeLoginModal = () => {
+		setLoginModalOpen(false);
 	};
 
 	return (
@@ -34,8 +34,8 @@ function App() {
 			<StickyAppBar />
 
 			<LoginRegisterModal
-				open={true} /* {loginPopupOpen} */
-				closeLoginPopup={closeLoginPopup}
+				open={loginModalOpen}
+				closeLoginModal={closeLoginModal}
 			/>
 
 			<DefaultDashboard />

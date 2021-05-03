@@ -4,11 +4,11 @@ import FormInput from '../../components/Forms/FormSubmit'
 import Modal from '../../components/Modal'
 import Tabs from '../../components/Tabs'
 
-const LoginRegisterModal = ({open}) => {
+const LoginRegisterModal = ({open, closeLoginModal}) => {
     return (
-        <div>
+        <Modal open={open} closeModal={closeLoginModal}>
             
-        </div>
+        </Modal>
     )
 }
 

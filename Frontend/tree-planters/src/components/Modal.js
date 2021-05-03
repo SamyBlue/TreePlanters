@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Modal = ({ open, closeLoginPopup, children }) => {
+const Modal = ({ open, closeModal, children }) => {
 	const classes = useStyles();
 
 	return (
@@ -27,7 +27,7 @@ const Modal = ({ open, closeLoginPopup, children }) => {
 				aria-describedby='transition-modal-description'
 				className={classes.modal}
 				open={open}
-				onClose={closeLoginPopup}
+				onClose={closeModal}
 				closeAfterTransition
 				BackdropComponent={Backdrop}
 				BackdropProps={{
