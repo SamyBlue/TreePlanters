@@ -5,7 +5,7 @@ import FormInput from './FormInput';
     
 const [formFields, setFormFields] = useState({
 	"Username": '',
-    "Password": {field: '', autoHides : true},
+    "Password*": '',		//add a * to end if contains sensitive information
 	"Postal Code": '',
 	...
 })
@@ -18,22 +18,17 @@ const [formFields, setFormFields] = useState({
 const Form = ({ formFields, setFormFields }) => {
 	return (
 		<div>
-			{/* <FormInput
-					label='Username'
-					changesField='username'
-					formFields={formFields}
-					setFormFields={setFormFields}
-				/>
-				<FormInput
-					label='Password'
-					changesField='password'
-					autoHides={true}
-					formFields={formFields}
-					setFormFields={setFormFields}
-				/>
-				<FormSubmit label='Login' /> */}
 			{Object.keys(formFields).map((field) => {
-				return ;
+				const label = field.slice(-1) === '*' ? field.slice(0, -1) : field;
+				return (
+					<FormInput
+						label={label}
+						changesField={field}
+						formFields={formFields}
+						setFormFields={setFormFields}
+						autoHides={field.slice(-1) === '*'}
+					/>
+				);
 			})}
 		</div>
 	);
