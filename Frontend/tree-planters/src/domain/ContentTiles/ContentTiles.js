@@ -10,6 +10,7 @@ const ContentTiles = () => {
 			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
             year once fully grown. Over a lifetime of 100 years, one tree could
             absorb around a tonne of CO2.`,
+			color: '#dbb95f',
 		},
 		{
 			image:
@@ -18,6 +19,7 @@ const ContentTiles = () => {
 			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
             year once fully grown. Over a lifetime of 100 years, one tree could
             absorb around a tonne of CO2.`,
+			color: '#432e14',
 		},
 		{
 			image:
@@ -26,10 +28,11 @@ const ContentTiles = () => {
 			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
             year once fully grown. Over a lifetime of 100 years, one tree could
             absorb around a tonne of CO2.`,
+			color: '#6cbe30',
 		},
 	];
 
-	let reversed = true;
+	let reversed = true; //Allows tiles to alternate in a nice pattern
 
 	return (
 		<div className='ContentTiles'>
@@ -40,6 +43,7 @@ const ContentTiles = () => {
 						image={tile.image}
 						header={tile.header}
 						text={tile.text}
+						color={tile.color}
 						reversed={reversed}
 					/>
 				);
