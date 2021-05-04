@@ -8,7 +8,7 @@ const Tile = ({ image, header, text, color, reversed }) => {
 
 	const imageTile =
 		width > 750 ? (
-			<Parallax bgImage={image} strength={500} className='Tile'>
+			<Parallax bgImage={image} strength={600} className='Tile'>
 				<div style={{ height: '450px' }} />
 			</Parallax>
 		) : (
