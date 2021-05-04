@@ -1,29 +1,6 @@
-import React from 'react';
-import StickyAppBar from './components/StickyAppBar';
-import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
-import ContentTiles from './domain/ContentTiles/ContentTiles';
-import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
-import DonateModal from './domain/DonateModal/DonateModal';
+import Leaderboard from './components/Leaderboard'
 
 function App() {
-	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
-	const [donateModalOpen, setDonateModalOpen] = React.useState(false);
-
-	const openLoginModal = () => {
-		setLoginModalOpen(true);
-	};
-
-	const closeLoginModal = () => {
-		setLoginModalOpen(false);
-	};
-
-	const openDonateModal = () => {
-		setDonateModalOpen(true);
-	};
-
-	const closeDonateModal = () => {
-		setDonateModalOpen(false);
-	};
 
 	return (
 		<div className='App'>
@@ -40,22 +17,8 @@ function App() {
 
 			<Footer />*Uses accordion.js
 			*/}
+			<Leaderboard />
 
-			<StickyAppBar
-				openLoginModal={openLoginModal}
-				openDonateModal={openDonateModal}
-			/>
-
-			<LoginRegisterModal
-				open={loginModalOpen}
-				closeLoginModal={closeLoginModal}
-			/>
-
-			<DonateModal open={donateModalOpen} closeDonateModal={closeDonateModal} />
-
-			<DefaultDashboard openDonateModal={openDonateModal}/>
-
-			<ContentTiles />
 		</div>
 	);
 }
