@@ -22,21 +22,26 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 
 	return (
 		<div className={classes.root}>
-			<AppBar style={{ backgroundColor: 'rgb(135, 133, 50)' }}>
+			<AppBar style={{ background: 'transparent', boxShadow: 'none' }}>
 				<Toolbar>
-					<img src='logo.jpg' alt='TreePlanters-logo' width='60' height='60' />
+					<img
+						src='logo.jpg'
+						alt='TreePlanters-logo'
+						width='100'
+						height='100'
+					/>
 					<Typography variant='h6' className={classes.title}>
-						Tree Planters
+						{/* Leave empty unless want title in top-left corner */}
 					</Typography>
 					<Button
-						style={{ backgroundColor: '#DBB95F' }}
+						style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 						className={classes.menuButton}
 						onClick={openDonateModal}
 					>
 						Donate
 					</Button>
 					<Button
-						style={{ backgroundColor: '#DBB95F' }}
+						style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 						className={classes.menuButton}
 						onClick={openLoginModal}
 					>

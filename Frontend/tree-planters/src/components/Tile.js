@@ -8,7 +8,7 @@ const Tile = ({ image, header, text, color, reversed }) => {
 
 	const imageTile =
 		width > 750 ? (
-			<Parallax bgImage={image} strength={800} className='Tile'>
+			<Parallax bgImage={image} strength={500} className='Tile'>
 				<div style={{ height: '450px' }} />
 			</Parallax>
 		) : (
@@ -25,7 +25,13 @@ const Tile = ({ image, header, text, color, reversed }) => {
 			>
 				{header}
 			</h2>
-			<p className='TileText' style={{fontSize:'large', position: 'absolute'}}>{text}</p>
+			<p
+				className='TileText'
+				style={{ fontSize: 'large', position: 'relative', top: '-80px' }}
+			>
+				{text}
+			</p>
+			{/* Need to fix text positioning on smaller screens and vertically center*/}
 		</div>
 	);
 

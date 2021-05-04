@@ -86,7 +86,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 			<Button
 				variant='contained'
 				size='large'
-				style={{ backgroundColor: '#DBB95F' }}
+				style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 				onClick={openDonateModal}
 			>
 				Donate
