@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,18 +27,16 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 		<div className={classes.root}>
 			<AppBar style={{ background: 'transparent', boxShadow: 'none' }}>
 				<Toolbar>
-					<img
-						src='logo.jpg'
-						alt='TreePlanters-logo'
-						width='100'
-						height='100'
-					/>
+					<img src='logo.jpg' alt='TreePlanters-logo' width='80' height='80' />
 					<Typography variant='h6' className={classes.title}>
 						{/* Leave empty unless want title in top-left corner */}
 					</Typography>
-					<IconButton className={classes.menuButton} style={{position:'relative', left:'15px'}}>
-						<Badge badgeContent={2} color='secondary' >
-							<NotificationsIcon  style={{height:'50px', width:'50px'}}/>
+					<IconButton
+						className={classes.menuButton}
+						style={{ position: 'relative', left: '15px' }}
+					>
+						<Badge badgeContent={2} color='secondary'>
+							<NotificationsIcon style={{ height: '50px', width: '50px' }} />
 						</Badge>
 					</IconButton>
 					<Button
