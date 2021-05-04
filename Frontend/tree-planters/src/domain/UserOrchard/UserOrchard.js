@@ -69,45 +69,83 @@ const tree_data = [
     {
       tree_id: "1",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage0"
+      type: "ash",
+      year_planted: 2021
+
     },
     {
       tree_id: "2",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage1"
+      type: "ash",
+      year_planted: 2021
     },
     {
       tree_id: "3",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage2"
+      type: "pine",
+      year_planted: 2021
     },
     {
       tree_id: "4",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage3"
+      type: "pine",
+      year_planted: 2021
     },
     {
       tree_id: "5",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage2"
+      type: "beech",
+      year_planted: 2021
     },
     {
       tree_id: "6",
       user_id: "1",
-      type: "Dummy",
-      current_stage: "Stage0"
+      type: "beech",
+      year_planted: 2021,
     },
 ]
 
-const tree_list=tree_data.map((tree) => {
-    const stage=tree.current_stage
-    return <img src={tree.type + stage + '.png'} alt={tree.type} key={tree.id}/>
-})
+const current_year = 2021
+
+const SetTreeStage = (type, year_planted, value) => {
+    let tree_age = current_year - year_planted
+    if (type === "ash") {
+        if (tree_age + value === 0 ) {
+            return "0"
+        } else if (tree_age+value === 2 ) {
+            return "1"
+        } else if (tree_age+value === 4 ) {
+            return "2"
+        } else if (tree_age+value > 4 ) {
+            return "3"
+        }
+    }
+    else if (type === "pine") {
+        if (tree_age + value < 6 ) {
+            return "0"
+        } else if (tree_age+value < 14 ) {
+            return "1"
+        } else if (tree_age+value < 32 ) {
+            return "2"
+        } else if (tree_age+value >= 32 ) {
+            return "3"
+        }
+        
+    }
+    else if (type === "beech") {
+        if (tree_age + value < 20 ) {
+            return "0"
+        } else if (tree_age+value < 32 ) {
+            return "1"
+        } else if (tree_age+value < 54  ) {
+            return "2"
+        } else if (tree_age+value >= 54 ) {
+            return "3"
+        }
+        
+    }
+
+}
 
 const user_data = {
     username: "Test User"
@@ -116,13 +154,19 @@ const user_data = {
 const UserOrchard = () => {
     const classes = useStyles();
 
-    const [yearsPassed, setYearsPassed] = useState(0);
+    const [value, setValue] = useState(0);
 
-    useEffect(() => {
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
+    const tree_list=tree_data.map((tree) => {
+        const stage=SetTreeStage(tree.type, tree.year_planted, value) // stage changes according to value
+        return <img src={tree.type + stage + '.png'} alt={tree.type} key={tree.id}/>
     })
 
-    
+
+
     return (
         <>
             <div className="UserOrchard">
@@ -141,6 +185,8 @@ const UserOrchard = () => {
                     Time Elapsed:
                     </Typography>
                     <Slider
+                        value={value}
+                        onChange={handleChange}
                         defaultValue={0}
                         getAriaValueText={valuetext}
                         aria-labelledby="discrete-slider"
