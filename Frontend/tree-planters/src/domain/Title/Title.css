@@ -4,3 +4,10 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#Sun {
+	width: 50%;
+	position: absolute;
+	top: -20%;
+	z-index: -10;
+}
