@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import './UserOrchard.css'
+import './UserOrchard.css';
+import GoogleMapReact from "google-map-react";
 
 const useStyles = makeStyles({
     root: {
@@ -70,38 +71,50 @@ const tree_data = [
       tree_id: "1",
       user_id: "1",
       type: "ash",
-      year_planted: 2021
+      year_planted: 2021,
+      lat:52.9516302,
+      lng:1.0106029
 
     },
     {
       tree_id: "2",
       user_id: "1",
       type: "ash",
-      year_planted: 2021
+      year_planted: 2021,
+      lat:52.9516302,
+      lng:1.0106029
     },
     {
       tree_id: "3",
       user_id: "1",
       type: "pine",
-      year_planted: 2021
+      year_planted: 2021,
+      lat:52.9516302,
+      lng:1.0106029
     },
     {
       tree_id: "4",
       user_id: "1",
       type: "pine",
-      year_planted: 2021
+      year_planted: 2021,
+      lat:52.9516302,
+      lng:1.0106029
     },
     {
       tree_id: "5",
       user_id: "1",
       type: "beech",
-      year_planted: 2021
+      year_planted: 2021,
+      lat:52.9408065,
+      lng:0.9393098
     },
     {
       tree_id: "6",
       user_id: "1",
       type: "beech",
       year_planted: 2021,
+      lat:52.9408065,
+      lng:0.9393098
     },
 ]
 
@@ -160,25 +173,76 @@ const UserOrchard = () => {
         setValue(newValue);
     };
 
-    const tree_list=tree_data.map((tree) => {
-        const stage=SetTreeStage(tree.type, tree.year_planted, value) // stage changes according to value
-        return <img src={tree.type + stage + '.png'} alt={tree.type} key={tree.id}/>
-    })
+    /* const AnyReactComponent = ({ text }) => (
+        <div style={{
+          color: 'white', 
+          background: 'grey',
+          padding: '15px 10px',
+          display: 'inline-flex',
+          textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: 'translate(-50%, -50%)'
+        }}>
+          {text}
+        </div>
+      ); */
 
+    // const tree_list=tree_data.map((tree) => {
+    //     const stage=SetTreeStage(tree.type, tree.year_planted, value) // stage changes according to value
+    //     return (
 
+    //         <img src={tree.type + stage + '.png'} alt={tree.type} key={tree.id} position={{ lat: tree.lat, lng: tree.lng }} />
+    // )
+    // })
+
+    const AnyReactComponent = ({ children }) => (
+        <div style={{
+          padding: '15px 10px',
+          display: 'inline-flex',
+          textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          transform: 'translate(-50%, -50%)',
+          width: '250px',
+          height: '200px',
+        // margin: '20px',
+        // border: '1px solid black',
+        // position: 'relative'
+        }}>
+          {children}
+        </div>
+      );
 
     return (
         <>
-            <div className="UserOrchard">
-                <h2>{user_data.username}'s Forest</h2>
-                <div className="Trees">
-                    {tree_list}
+            
+                <h2>{user_data.username}'s Orchard</h2>
+                <div style = {{height: '500px', width: '100%'}}>
+
+
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: "AIzaSyCzSDLwakvV-7nq3GXYc1sAapKFiAL8Fd4" }}
+                            defaultCenter={{lat: 52.945,lng: 0.986}}
+                            defaultZoom={14}
+                        >
+                    {tree_data.map((tree) => {
+                    const stage=SetTreeStage(tree.type, tree.year_planted, value) // stage changes according to value
+                    return (
+                    <AnyReactComponent lat={tree.lat} 
+                    lng={tree.lng} >
+                        <img src={tree.type + stage + '.png'} alt={tree.type} key={tree.id} 
+                        style={{margin:'0', position:'absolute', top:'50%', left:'50%', transform: 'translate(-50%, -50%)'}} 
+                        />
+                    </AnyReactComponent>
+                )})}
+                        
+                  
+                        </GoogleMapReact>
                 </div>
-                <h3>Total Trees Planted:</h3>  
-                <h3>{tree_data.length}</h3>
-                <h3>Total Donations:</h3>  
-                <h3>£{total_donations}</h3>         
-            </div>
+
+          
                 <div className="Slider">
                     <div className={classes.root}>
                     <Typography id="discrete-slider" gutterBottom>
@@ -197,6 +261,15 @@ const UserOrchard = () => {
                         max={60}
                     />
                 </div>
+                  <div className="UserOrchard">
+                {/* <div className="Trees">
+                    {tree_list}
+                </div> */}
+                <h3>Total Trees Planted:</h3>  
+                <h3>{tree_data.length}</h3>
+                <h3>Total Donations:</h3>  
+                <h3>£{total_donations}</h3>         
+            </div>
             </div>
         </>
     )
