@@ -19,8 +19,13 @@ const Tile = ({ image, header, text, color, reversed }) => {
 
 	const textTile = (
 		<div className='Tile' style={{ backgroundColor: color }}>
-			<h2 className='TileText'>{header}</h2>
-			<p className='TileText'>{text}</p>
+			<h2
+				className='TileText'
+				style={{ fontFamily: 'Lucida Handwriting', fontSize: 'xx-large' }}
+			>
+				{header}
+			</h2>
+			<p className='TileText' style={{fontSize:'large', position: 'absolute'}}>{text}</p>
 		</div>
 	);
 
