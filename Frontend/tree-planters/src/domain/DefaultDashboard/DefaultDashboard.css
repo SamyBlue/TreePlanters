@@ -29,11 +29,15 @@
 .DashboardCard {
 	border-width: medium;
 	border-style: solid;
-	border-color: #dbb95f;
+	background-color: #6BBF30;
+	border-radius: 100%;
 	text-align: center;
 	padding: 0.5rem;
-	margin: 0.5rem;
-	height: 20rem;
+	margin: auto;
+	height: 14vw;
+	width: 14vw;
+	margin-top: -5vw;
+	font-size: 2vw;
 }
 
 .DashboardCards img {
