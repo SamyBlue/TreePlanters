@@ -14,13 +14,11 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-import { TableHead } from '@material-ui/core';
 
 const useStyles1 = makeStyles((theme) => ({
   root: {
-    width: '40%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    flexShrink: 0,
+   
   },
 }));
 
@@ -105,15 +103,20 @@ rows = rows.sort(function(a,b) {
 
 for (var i = 0; i < rows.length; i++) {
     rows[i].push(i+1)
+    switch(i) {
+      case 0: rows[i].push('gold'); break;
+      case 1: rows[i].push('silver'); break;
+      case 2: rows[i].push('#cd7f32'); break;
+      default: rows[i].push('black'); 
+    }
 };
 
 console.log(rows)
 
 const useStyles2 = makeStyles({
   table: {
-    width: '40%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    width: '30%',
+    margin: 'auto',
   },
 });
 
@@ -134,61 +137,62 @@ const Leaderboard = () => {
   };
 
   return (
-    <div>
+    <TableContainer>
+      <Paper className={classes.table} elevation={9}>
         <div style={{width: '40%', marginLeft: 'auto', marginRight: 'auto' }}>
-            <h1 style={{textAlign:'center', color:'black'}}>Leaderboard</h1>
-        </div>
-        <TableContainer>
-            <Paper className={classes.table} elevation={9}>      
-            <Table>
-                <TableBody>
-                {(rowsPerPage > 0
-                    ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    : rows
-                ).map((row) => (
-                    <TableRow key={row[0]}>
-                    <TableCell align="left">
-                        {row[2]}
-                    </TableCell> 
-                    <TableCell align="center">
-                        {row[0]}
-                    </TableCell>
-                    <TableCell align="right">
-                        {row[1]}
-                    </TableCell>
-                    </TableRow>
-                ))}
+          <h1 style={{textAlign:'center', color:'black'}}>Leaderboard</h1>
+        </div>    
 
-                {emptyRows > 0 && (
-                    <TableRow style={{ height: 53 * emptyRows }}>
-                    <TableCell colSpan={6} />
-                    </TableRow>
-                )}
-                </TableBody>
-                <TableFooter>
-                <TableRow>
-                    <TablePagination
-                    rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                    colSpan={3}
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    SelectProps={{
-                        inputProps: { 'aria-label': 'rows per page' },
-                        native: true,
-                    }}
-                    onChangePage={handleChangePage}
-                    onChangeRowsPerPage={handleChangeRowsPerPage}
-                    ActionsComponent={TablePaginationActions}
-                    />
-                </TableRow>
-                </TableFooter>
-            </Table>
-            </Paper> 
-        </TableContainer>
-    </div>
+        <Table>
+          <TableBody>
+          {(rowsPerPage > 0
+              ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : rows
+          ).map((row) => (
+              <TableRow key={row[0]}>
+                  <TableCell align="left">
+                      {row[2]}
+                  </TableCell> 
+                  <TableCell align="left" style={{ fontWeight: 'bold', color: row[3] }}>
+                      {row[0]}
+                  </TableCell>
+                  <TableCell align="right" style={{fontWeight: 'bold'}}>
+                      {row[1]} trees
+                  </TableCell>
+              </TableRow>
+          ))}
+
+          {emptyRows > 0 && (
+              <TableRow style={{ height: 53 * emptyRows }}>
+              <TableCell colSpan={6} />
+              </TableRow>
+          )}
+          </TableBody> 
+        </Table>
+
+        <TableFooter>
+          <TableRow>
+              <TablePagination 
+              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              colSpan={3}
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              SelectProps={{
+                  inputProps: { 'aria-label': 'rows per page' },
+                  native: true,
+              }}
+              onChangePage={handleChangePage}
+              onChangeRowsPerPage={handleChangeRowsPerPage}
+              ActionsComponent={TablePaginationActions}
+              />
+          </TableRow>
+        </TableFooter>
+
+      </Paper> 
+    </TableContainer>
   );
-}
+};
 
 
 export default Leaderboard
