@@ -8,6 +8,7 @@
 	border-style: solid;
 	border-color: #dbb95f;
 	width: 60%;
+	height: 600px;
 	padding-bottom: 1rem;
 	position: relative;
 }
@@ -29,24 +30,34 @@
 .DashboardCard {
 	border-width: medium;
 	border-style: solid;
-	background-color: #6BBF30;
+	background-color: #6bbf30;
 	border-radius: 100%;
 	text-align: center;
 	padding: 0.5rem;
 	margin: auto;
-	height: 14vw;
-	width: 14vw;
-	margin-top: -5vw;
-	font-size: 2vw;
+	height: 200px;
+	width: 200px;
+	margin-top: -3vw;
+	font-size: 25px;
+	position: relative;
 }
 
-.DashboardCards img {
-	/* width: 50%; */
+.statistic {
+	position: relative;
+	font-weight: bold;
+	font-size: 35px;
+	vertical-align: top;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	top: -20px;
+}
+
+/* .DashboardCards img {
 	height: 6rem;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+} */
 
 .DashboardCards li {
 	list-style-type: none;
@@ -59,6 +70,13 @@
 	display: inline;
 }
 
+#LargeDonate {
+	width: 70%;
+	height: 10%;
+	position: relative;
+	top: 50px;
+}
+
 @media only screen and (max-width: 600px) {
 	.DashboardCards {
 		flex-direction: column;
@@ -66,9 +84,13 @@
 	}
 	.DefaultDashboard {
 		width: 75%;
+		height: 1200px;
 	}
 	.DashboardCards li {
 		width: 90%;
+	}
+	.DashboardCard {
+		margin-top: 20px;
 	}
 }
 

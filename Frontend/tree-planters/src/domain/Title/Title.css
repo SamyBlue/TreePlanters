@@ -1,22 +1,25 @@
 #Title {
 	display: block;
-	width: 70%;
+	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #Sun {
-	width: 50%;
+	width: 40%;
 	position: absolute;
-	top: -20%;
+	left: 30%;
+	top: 30%;
 	z-index: -10;
+	transform: translate(-50%, -50%);
 }
 
 #Subtitle {
 	position: absolute;
 	width: 30%;
-	top: 52%;
-	left: 35%;
+	top: 80%;
+	left: 50%;
 	text-align: center;
-    font-size: 2vw;
+	font-size: 2vw;
+	transform: translate(-50%, -50%);
 }

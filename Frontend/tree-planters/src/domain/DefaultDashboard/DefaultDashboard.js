@@ -44,30 +44,35 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='growingtree.gif' alt='growing tree' /> */}
 					<div className='DashboardCard'>
-						<p>{`Trees
-						Planted`}</p>
-						<p>{TREES_PLANTED}</p>
+						<p>Trees Planted</p>
+						<p className='statistic'>{TREES_PLANTED}</p>
+						<p className='statistic'>of</p>
+						<p className='statistic'>10000</p>
 					</div>
 				</li>
 				<li>
 					{/* <img src='foot.png' alt='carbon footprint' /> */}
 					<div className='DashboardCard'>
 						<p>Carbon Saved</p>
-						<p>{CARBON_SAVED} kg</p>
+						<p className='statistic'>{CARBON_SAVED} kg</p>
+						<p className='statistic'>of</p>
+						<p className='statistic'>10000</p>
 					</div>
 				</li>
 				<li>
 					{/* <img src='pig.png' alt='piggy bank' /> */}
 					<div className='DashboardCard'>
 						<p>Money Raised</p>
-						<p>£{MONEY_RAISED}</p>
+						<p className='statistic'>£{MONEY_RAISED}</p>
+						<p className='statistic'>of</p>
+						<p className='statistic'>10000</p>
 					</div>
 				</li>
 			</ul>
 
 			<Button
 				variant='contained'
-				size='large'
+				id="LargeDonate"
 				style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 				onClick={openDonateModal}
 			>

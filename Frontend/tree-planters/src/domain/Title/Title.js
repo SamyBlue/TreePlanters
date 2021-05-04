@@ -11,7 +11,7 @@ const defaultOptions = {
 
 const Title = () => {
 	return (
-		<div>
+		<div style={{ position: 'relative' }}>
 			<img id='Title' src={'TitleDesign.png'} alt='Nature' />
 			<div id='Sun'>
 				<Lottie options={defaultOptions} />
