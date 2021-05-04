@@ -45,7 +45,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 
 			<ul className='DashboardCards'>
 				<li>
-					<img src='growingtree.gif' alt='growing tree' />
+					{/* <img src='growingtree.gif' alt='growing tree' /> */}
 					<div className='DashboardCard'>
 						<LooksOne />
 						<p>Trees Planted:</p>
@@ -57,7 +57,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 					</div>
 				</li>
 				<li>
-					<img src='foot.png' alt='carbon footprint' />
+					{/* <img src='foot.png' alt='carbon footprint' /> */}
 					<div className='DashboardCard'>
 						<LooksTwo />
 						<p>Carbon Saved:</p>
@@ -70,7 +70,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 					</div>
 				</li>
 				<li>
-					<img src='pig.png' alt='piggy bank' />
+					{/* <img src='pig.png' alt='piggy bank' /> */}
 					<div className='DashboardCard'>
 						<Looks3 />
 						<p>Money Raised:</p>

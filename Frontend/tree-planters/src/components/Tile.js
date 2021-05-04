@@ -27,7 +27,13 @@ const Tile = ({ image, header, text, color, reversed }) => {
 			</h2>
 			<p
 				className='TileText'
-				style={{ fontSize: 'large', position: 'relative', top: '-80px' }}
+				style={{
+					fontSize: 'large',
+					position: 'relative',
+					top: '-80px',
+					color: '#000000',
+					fontWeight: 'bold',
+				}}
 			>
 				{text}
 			</p>

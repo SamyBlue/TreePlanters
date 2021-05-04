@@ -3,7 +3,9 @@ body {
 	font-family: Poppins, Lucida Handwriting;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url('./background.jpg');
+	/* background-image: url('./background.jpg'); */
+	background: rgb(40,209,231);
+	background: linear-gradient(0deg, rgba(40,209,231,1) 0%, rgb(5, 21, 73) 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;

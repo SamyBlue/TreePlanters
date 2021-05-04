@@ -14,7 +14,7 @@ const Title = () => {
 		<div>
 			<img id='Title' src={'TitleDesign.png'} alt='Nature' />
 			<div id='Sun'>
-				<Lottie  options={defaultOptions} />
+				<Lottie options={defaultOptions} />
 			</div>
 			<h1 id='Subtitle'>Join our mission to save the worlds trees</h1>
 		</div>
