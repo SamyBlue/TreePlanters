@@ -16,7 +16,7 @@ const Title = () => {
 			<div id='Sun'>
 				<Lottie  options={defaultOptions} />
 			</div>
-			{/* <h1 id='Sun'>eggggggggggggggggggggggggggggggggggggggg</h1> */}
+			<h1 id='Subtitle'>Join our mission to save the worlds trees</h1>
 		</div>
 	);
 };
