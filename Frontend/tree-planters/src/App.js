@@ -4,7 +4,7 @@ import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
 import ContentTiles from './domain/ContentTiles/ContentTiles';
 import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
 import DonateModal from './domain/DonateModal/DonateModal';
-import UserDashboard from './domain/UserDashboard/UserDashboard';
+/* import UserDashboard from './domain/UserDashboard/UserDashboard'; */
 import UserOrchard from './domain/UserOrchard/UserOrchard';
 
 function App() {
