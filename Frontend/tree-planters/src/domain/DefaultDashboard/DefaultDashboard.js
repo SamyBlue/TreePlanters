@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import './DefaultDashboard.css';
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/21751-circular-progress-bar.json';
 
 const TREES_PLANTED = 1000; //! TEMP VALUE
 const CARBON_SAVED = 10; //! TEMP VALUE
 const MONEY_RAISED = 1; //! TEMP VALUE
+
+const lottieOptions = {
+	loop: true,
+	autoplay: true,
+	animationData: animationData,
+};
 
 const DefaultDashboard = ({ openDonateModal }) => {
 	const [index, setIndex] = useState(0);
@@ -44,6 +52,21 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='growingtree.gif' alt='growing tree' /> */}
 					<div className='DashboardCard'>
+						<img
+							src='Badge.png'
+							alt='Badge'
+							className='BadgeLayer'
+							style={{ zIndex: -3 }}
+						/>
+						<img
+							src='Ribbon.png'
+							alt='Ribbon'
+							className='BadgeLayer'
+							style={{ zIndex: -1 }}
+						/>
+						<div id='CircularBar'>
+							<Lottie options={lottieOptions} />
+						</div>
 						<p>Trees Planted</p>
 						<p className='statistic'>{TREES_PLANTED}</p>
 						<p className='statistic'>of</p>
@@ -53,6 +76,21 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='foot.png' alt='carbon footprint' /> */}
 					<div className='DashboardCard'>
+						<img
+							src='Badge.png'
+							alt='Badge'
+							className='BadgeLayer'
+							style={{ zIndex: -3 }}
+						/>
+						<img
+							src='Ribbon.png'
+							alt='Ribbon'
+							className='BadgeLayer'
+							style={{ zIndex: -1 }}
+						/>
+						<div id='CircularBar'>
+							<Lottie options={lottieOptions} />
+						</div>
 						<p>Carbon Saved</p>
 						<p className='statistic'>{CARBON_SAVED} kg</p>
 						<p className='statistic'>of</p>
@@ -62,6 +100,21 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='pig.png' alt='piggy bank' /> */}
 					<div className='DashboardCard'>
+						<img
+							src='Badge.png'
+							alt='Badge'
+							className='BadgeLayer'
+							style={{ zIndex: -3 }}
+						/>
+						<img
+							src='Ribbon.png'
+							alt='Ribbon'
+							className='BadgeLayer'
+							style={{ zIndex: -1 }}
+						/>
+						<div id='CircularBar'>
+							<Lottie options={lottieOptions} />
+						</div>
 						<p>Money Raised</p>
 						<p className='statistic'>£{MONEY_RAISED}</p>
 						<p className='statistic'>of</p>

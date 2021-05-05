@@ -28,18 +28,40 @@
 }
 
 .DashboardCard {
-	border-width: medium;
+	/* border-width: medium;
 	border-style: solid;
-	background-color: #6bbf30;
-	border-radius: 100%;
+	background-color: #6bbf30; */
+	/* border-radius: 100%; */
 	text-align: center;
 	padding: 0.5rem;
 	margin: auto;
-	height: 200px;
-	width: 200px;
-	margin-top: -1vw;
+	height: 300px;
+	width: 300px;
+	margin-top: -2.5vw;
 	font-size: 25px;
 	position: relative;
+}
+
+.BadgeLayer {
+	position: absolute;
+	/* 	background-color: blue; */
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+}
+
+#CircularBar {
+	position: relative;
+	/* 	background-color: blue; */
+	width: 300px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	top: -22px;
+	z-index: -2;
 }
 
 .statistic {
@@ -50,6 +72,7 @@
 	margin-top: -10px;
 	margin-bottom: -10px;
 	top: -20px;
+	z-index: 1;
 }
 
 /* .DashboardCards img {
