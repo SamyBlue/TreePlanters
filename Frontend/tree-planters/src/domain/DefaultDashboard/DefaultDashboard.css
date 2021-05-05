@@ -78,7 +78,6 @@
 .statisticName {
 	position: relative;
 	top: -45px;
-	
 }
 
 #windmill1 {
@@ -90,7 +89,7 @@
 	right: 50%;
 	margin-left: -50vw;
 	margin-right: -50vw;
-	bottom:37px;
+	bottom: 37px;
 }
 
 #windmill2 {
@@ -102,7 +101,7 @@
 	right: 50%;
 	margin-left: -50vw;
 	margin-right: -50vw;
-	bottom:30px;
+	bottom: 30px;
 }
 
 /* .DashboardCards img {
@@ -121,6 +120,20 @@
 
 .DashboardCards ul {
 	display: inline;
+}
+
+.Mountains {
+	margin-top: 60px;
+	background-repeat: repeat-x;
+	height: 292px;
+	position: absolute;
+	z-index: -5;
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {

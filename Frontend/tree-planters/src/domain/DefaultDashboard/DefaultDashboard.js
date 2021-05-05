@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button';
 import './DefaultDashboard.css';
 import Lottie from 'react-lottie';
 import circularAnimation from '../../lotties/21751-circular-progress-bar.json';
 import windmillAnimation from '../../lotties/15422-wind-mill-animation.json';
+import Fade from '@material-ui/core/Fade';
+import useInterval from '../../hooks/useInterval';
 
 const TREES_PLANTED = 1000; //! TEMP VALUE
 const CARBON_SAVED = 10; //! TEMP VALUE
@@ -19,51 +21,51 @@ const lottieWindmill = {
 	loop: true,
 	autoplay: true,
 	animationData: windmillAnimation,
-}
+};
 
 const DefaultDashboard = ({ openDonateModal }) => {
-	const [index, setIndex] = useState(0);
-	const imageList = ['summer.png', 'autumn.png', 'winter.png', 'spring.png'];
+	const [imageIndex, setImageIndex] = useState(0);
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setIndex((index) => index + 1);
-		}, 5000);
-		return () => {
-			clearInterval(timer);
-		};
-	}, []);
+	useInterval(() => {
+		setImageIndex((imageIndex + 1) % 4);
+	}, 3000);
 
 	return (
 		<div className='DefaultDashboard'>
 			<div
-				style={{
-					marginTop: '60px',
-					backgroundImage: `url(${imageList[index % 4]})`,
-					backgroundRepeat: 'repeat-x',
-					height: '292px',
-					position: 'absolute',
-					zIndex: '-5',
-					width: '100vw',
-					left: '50%',
-					right: '50%',
-					marginLeft: '-50vw',
-					marginRight: '-50vw',
-					bottom: '0',
-				}}
-			>
-				<img src={imageList[index % 4]} alt='' />
-			</div>
+				className='Mountains'
+				style={{ backgroundImage: 'url(grass.png)' }}
+			/>
+			<Fade in={imageIndex === 0} timeout={1000}>
+				<div
+					className='Mountains'
+					style={{ backgroundImage: 'url(summer.png)' }}
+				/>
+			</Fade>
+			<Fade in={imageIndex === 1} timeout={1000}>
+				<div
+					className='Mountains'
+					style={{ backgroundImage: 'url(autumn.png)' }}
+				/>
+			</Fade>
+			<Fade in={imageIndex === 2} timeout={1000}>
+				<div
+					className='Mountains'
+					style={{ backgroundImage: 'url(winter.png)' }}
+				/>
+			</Fade>
+			<Fade in={imageIndex === 3} timeout={1000}>
+				<div
+					className='Mountains'
+					style={{ backgroundImage: 'url(spring.png)' }}
+				/>
+			</Fade>
 
-			<div
-				id='windmill1'
-			>
+			<div id='windmill1'>
 				<Lottie options={lottieWindmill} />
 			</div>
 
-			<div
-				id='windmill2'
-			>
+			<div id='windmill2'>
 				<Lottie options={lottieWindmill} />
 			</div>
 
@@ -148,10 +150,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				</li>
 			</ul>
 
-			<Button
-				color={'#00552a'}
-				onClick={openDonateModal}
-			>
+			<Button color={'#00552a'} onClick={openDonateModal}>
 				Donate Today
 			</Button>
 		</div>
