@@ -10,7 +10,7 @@ export function useUserData() {
 //Example usage: 
 
 export function UserDataProvider({children}) {
-	const [userData, setUserData] = useState(true)
+    const [userData, setUserData] = useState({})
 	
 	return (
 		<UserDataContext.Provider value={userData}>
