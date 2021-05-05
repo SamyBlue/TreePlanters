@@ -25,7 +25,13 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 
 	return (
 		<div className={classes.root}>
-			<AppBar style={{ background: 'transparent', boxShadow: 'none' }}>
+			<AppBar
+				style={{
+					backgroundColor: 'rgba(66, 128, 54, 0.95)',
+					background:
+						'linear-gradient(0deg, rgba(66, 128, 54, 0.85) 0%, rgba(32, 64, 54, 0.95) 100%)',
+				}}
+			>
 				<Toolbar>
 					<img src='logo.png' alt='TreePlanters-logo' width='80' height='80' />
 					<Typography variant='h6' className={classes.title}>
