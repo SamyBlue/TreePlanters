@@ -13,9 +13,9 @@
 	transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
 		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  margin-left:5px;
-  margin-right:5px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .customButton:hover {

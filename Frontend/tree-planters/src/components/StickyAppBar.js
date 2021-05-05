@@ -23,13 +23,30 @@ const useStyles = makeStyles((theme) => ({
 export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 	const classes = useStyles();
 
+	const [scrollPosition, setScrollPosition] = React.useState(0);
+	const handleScroll = () => {
+		const position = window.pageYOffset;
+		setScrollPosition(position);
+	};
+
+	React.useEffect(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 		<div className={classes.root}>
 			<AppBar
 				style={{
 					backgroundColor: 'rgba(66, 128, 54, 0.95)',
-					background:
-						'linear-gradient(0deg, rgba(66, 128, 54, 0.85) 0%, rgba(32, 64, 54, 0.95) 100%)',
+					background: `linear-gradient(0deg, rgba(66, 128, 54, ${
+						1 - 0.01 * scrollPosition
+					}) 0%, rgba(32, 64, 54, 0.95) 100%)`,
+					transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+					boxShadow: `${scrollPosition > 5 ? 'none' : ''}`,
 				}}
 			>
 				<Toolbar>

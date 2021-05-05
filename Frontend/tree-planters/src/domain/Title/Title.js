@@ -11,7 +11,7 @@ const lottieOptions = {
 
 const Title = () => {
 	return (
-		<div style={{ position: 'relative' }}>
+		<div style={{ position: 'relative', marginTop: '50px' }}>
 			<img id='Title' src={'TitleDesign2.png'} alt='Nature' />
 			<div id='Sun'>
 				<Lottie options={lottieOptions} />
