@@ -27,7 +27,7 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 		<div className={classes.root}>
 			<AppBar style={{ background: 'transparent', boxShadow: 'none' }}>
 				<Toolbar>
-					<img src='logo.jpg' alt='TreePlanters-logo' width='80' height='80' />
+					<img src='logo.png' alt='TreePlanters-logo' width='80' height='80' />
 					<Typography variant='h6' className={classes.title}>
 						{/* Leave empty unless want title in top-left corner */}
 					</Typography>
