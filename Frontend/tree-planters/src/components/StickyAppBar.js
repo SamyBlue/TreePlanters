@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Button from './Button.js';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
@@ -40,15 +40,15 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 						</Badge>
 					</IconButton>
 					<Button
-						style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 						className={classes.menuButton}
+						colour={'#00552a'}
 						onClick={openDonateModal}
 					>
 						Donate
 					</Button>
 					<Button
-						style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 						className={classes.menuButton}
+						colour={'#699a30'}
 						onClick={openLoginModal}
 					>
 						Login

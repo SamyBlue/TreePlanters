@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '../../components/Button';
 import './DefaultDashboard.css';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/21751-circular-progress-bar.json';
@@ -130,12 +130,10 @@ const DefaultDashboard = ({ openDonateModal }) => {
 			</ul>
 
 			<Button
-				variant='contained'
-				id='LargeDonate'
-				style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
+				colour={'#00552a'}
 				onClick={openDonateModal}
 			>
-				Donate
+				Donate Today
 			</Button>
 		</div>
 	);

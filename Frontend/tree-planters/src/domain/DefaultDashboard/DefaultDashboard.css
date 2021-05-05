@@ -17,8 +17,8 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 16%;
-	padding-right: 16%;
+	padding-left: 12%;
+	padding-right: 12%;
 }
 
 .DashboardCards {
@@ -97,13 +97,6 @@
 
 .DashboardCards ul {
 	display: inline;
-}
-
-#LargeDonate {
-	width: 70%;
-	height: 10%;
-	position: relative;
-	top: 50px;
 }
 
 @media only screen and (max-width: 600px) {
