@@ -56,7 +56,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 						<p>Carbon Saved</p>
 						<p className='statistic'>{CARBON_SAVED} kg</p>
 						<p className='statistic'>of</p>
-						<p className='statistic'>10000</p>
+						<p className='statistic'>10000kg</p>
 					</div>
 				</li>
 				<li>
@@ -65,14 +65,14 @@ const DefaultDashboard = ({ openDonateModal }) => {
 						<p>Money Raised</p>
 						<p className='statistic'>£{MONEY_RAISED}</p>
 						<p className='statistic'>of</p>
-						<p className='statistic'>10000</p>
+						<p className='statistic'>£10000</p>
 					</div>
 				</li>
 			</ul>
 
 			<Button
 				variant='contained'
-				id="LargeDonate"
+				id='LargeDonate'
 				style={{ backgroundColor: '#6BBF30', boxShadow: '2px 3px' }}
 				onClick={openDonateModal}
 			>
