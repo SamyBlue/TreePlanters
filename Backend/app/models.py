@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from app import login_manager
+from app import login_manager #* comment this when making database 
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import UserMixin, LoginManager
@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///treeplanters.db'
 db = SQLAlchemy(app)
+#* uncomment this when making database
 # login_manager = LoginManager()
 # login_manager.init_app(app)
 # login_manager.login_view = 'login'
@@ -64,7 +65,7 @@ class Trees(FlaskSerializeMixin, db.Model):
 class Donations(FlaskSerializeMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=False, nullable=True)
-    donation_amount = db.Column(db.Float, unique=True, nullable=False)
+    donation_amount = db.Column(db.Float, unique=False, nullable=False)
 
     create_fields = update_fields = ['user_id', 'donation_amount']
 

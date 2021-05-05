@@ -6,24 +6,6 @@ from app.models import db, User, Trees, Donations
 import json
 import sqlite3
 
-def get_user_trees(user_id, json_str=True):
-    conn = sqlite3.connect(db)
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
-
-    rows = cur.execute('''
-    SELECT id, tree_type, year_planted, lat, lng, user_id from trees WHERE user_id == ?
-    ''', (user_id)).fetchall()
-
-    conn.commit()
-    conn.close()
-
-    if json_str:
-        return json.dumps([dict(ix) for ix in rows])
-
-    return rows
-    
-    
 @app.route('/')
 def hello():
     return "Plant trees pls"
@@ -91,28 +73,17 @@ def trees():
         db.session.commit()
         return 'Anonymous tree has been added'
 
-#! Broken, post works but get does not return trees for user
+#! Broken, post works but get does not return sorted trees for user
 @app.route("/trees/<user_id>", methods=['GET', 'POST'])
 @login_required
 def userTrees(user_id):
     if request.method == 'GET':
         # return all trees belonging to user
-        content = get_user_trees(user_id, json_str=True)
-        return content
-
-        # content = Trees.query.filter_by(user_id=current_user.id).all()
-        # json_content = json.dumps([dict(ix) for ix in content])
-        # return json_content
         
-        # return Trees.as_json(content)
-        # content = Trees.get_delete_put_post()
-        # inputDict = json.loads(content)
-        # print(inputDict)
-        # outputDict = [x for x in inputDict if x['user_id']==user_id]
-        # print(outputDict)
-        # outputJSON = json.dumps(outputDict) 
-        # print(outputJSON)
-        # return outputJSON
+        return content
+        # content = Trees.query.filter_by(user_id=current_user.id).all()
+
+        
         
     elif request.method == 'POST' and request.is_json:
         # add tree for this user
@@ -128,7 +99,7 @@ def userTrees(user_id):
         db.session.commit()
         return "tree added by user"
 
-#TODO Testing needed
+#* Route works
 @app.route('/donations', methods=['GET','POST'])
 def donations():
     if request.method == 'GET':
@@ -140,7 +111,7 @@ def donations():
     elif request.method == 'POST' and request.is_json:
         # add anonymous donation to database
         content = request.get_json()
-        donation = Donation(
+        donation = Donations(
                         user_id = None, 
                         donation_amount = content['donation_amount']
                     )
@@ -148,21 +119,22 @@ def donations():
         db.session.commit()
         return 'Anonymous donation has been added'
         
-#TODO Testing needed
-@app.route('/donations/<username>', methods=['GET','POST'])
-def userDonations():
+#* Route works
+@app.route('/donations/<user_id>', methods=['GET','POST'])
+def userDonations(user_id):
     if request.method == 'GET':
         # return all donations by the user
-        content = Donations.query.filter_by(Donations.user.username == username)
+        content = Donations.query.filter_by(user_id == user_id)
         return jsonify(content)
         
     elif request.method == 'POST':
         # add user donation to database
-        this_user = User.query.filter_by(username == username).first()
+        # this_user = User.query.filter_by(username == username).first()
         content = request.get_json()
         newDonation = Donations(
             donation_amount = content['donation_amount'],
-            user_id = this_user.id)
+            user_id = user_id)
         db.session.add(newDonation)
         db.session.commit()
+        return "user donated"
         # return f'{this_user.username} has donated {content['donation_amount']}'
