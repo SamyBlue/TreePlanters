@@ -16,6 +16,7 @@ const LoginPage = ({ closeModal }) => {
 				label='Login'
 				attemptSubmitMsg='Logging in...'
 				failedSubmitMsg="Some of your information isn't correct. Please try again."
+				color='#2e963a'
 			/>
 		</div>
 	);

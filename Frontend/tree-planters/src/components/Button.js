@@ -23,19 +23,19 @@ function lerpColor(a, b, amount) {
     background-color: #b71c1c;
 } */
 
-const Button = ({ onClick, colour, children }) => {
-	colour = colour || '#c4c4c4';
-	const [bgColour, setBgColour] = React.useState(colour);
-	const darkerColour = lerpColor(colour, '#000000', 0.5);
-	const makeDarker = () => setBgColour(darkerColour);
-	const makeLighter = () => setBgColour(colour);
+const Button = ({ onClick, color, children }) => {
+	color = color || '#c4c4c4';
+	const [bgcolor, setBgcolor] = React.useState(color);
+	const darkercolor = lerpColor(color, '#000000', 0.5);
+	const makeDarker = () => setBgcolor(darkercolor);
+	const makeLighter = () => setBgcolor(color);
 
 	return (
 		<button
 			onClick={onClick}
 			className='customButton'
 			style={{
-				backgroundColor: bgColour,
+				backgroundColor: bgcolor,
 			}}
 			onMouseEnter={makeDarker}
 			onMouseLeave={makeLighter}

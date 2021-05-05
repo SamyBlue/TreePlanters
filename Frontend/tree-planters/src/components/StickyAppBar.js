@@ -41,14 +41,14 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 					</IconButton>
 					<Button
 						className={classes.menuButton}
-						colour={'#00552a'}
+						color={'#00552a'}
 						onClick={openDonateModal}
 					>
 						Donate
 					</Button>
 					<Button
 						className={classes.menuButton}
-						colour={'#699a30'}
+						color={'#699a30'}
 						onClick={openLoginModal}
 					>
 						Login

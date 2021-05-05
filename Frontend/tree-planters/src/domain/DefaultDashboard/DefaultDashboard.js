@@ -130,7 +130,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 			</ul>
 
 			<Button
-				colour={'#00552a'}
+				color={'#00552a'}
 				onClick={openDonateModal}
 			>
 				Donate Today
