@@ -67,10 +67,12 @@ const DefaultDashboard = ({ openDonateModal }) => {
 						<div id='CircularBar'>
 							<Lottie options={lottieOptions} />
 						</div>
-						<p>Trees Planted</p>
+						<p className='statisticName'>Trees Planted</p>
 						<p className='statistic'>{TREES_PLANTED}</p>
 						<p className='statistic'>of</p>
-						<p className='statistic'>10000</p>
+						<p className='statistic' style={{ top: '-290px' }}>
+							10000
+						</p>
 					</div>
 				</li>
 				<li>
@@ -91,10 +93,12 @@ const DefaultDashboard = ({ openDonateModal }) => {
 						<div id='CircularBar'>
 							<Lottie options={lottieOptions} />
 						</div>
-						<p>Carbon Saved</p>
+						<p className='statisticName'>Carbon Saved</p>
 						<p className='statistic'>{CARBON_SAVED} kg</p>
 						<p className='statistic'>of</p>
-						<p className='statistic'>10000kg</p>
+						<p className='statistic' style={{ top: '-290px' }}>
+							10000kg
+						</p>
 					</div>
 				</li>
 				<li>
@@ -115,10 +119,12 @@ const DefaultDashboard = ({ openDonateModal }) => {
 						<div id='CircularBar'>
 							<Lottie options={lottieOptions} />
 						</div>
-						<p>Money Raised</p>
+						<p className='statisticName'>Money Raised</p>
 						<p className='statistic'>£{MONEY_RAISED}</p>
 						<p className='statistic'>of</p>
-						<p className='statistic'>£10000</p>
+						<p className='statistic' style={{ top: '-290px' }}>
+							£10000
+						</p>
 					</div>
 				</li>
 			</ul>

@@ -37,7 +37,7 @@
 	margin: auto;
 	height: 300px;
 	width: 300px;
-	margin-top: -2.5vw;
+	margin-top: -2vw;
 	font-size: 25px;
 	position: relative;
 }
@@ -67,12 +67,18 @@
 .statistic {
 	position: relative;
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 45px;
 	vertical-align: top;
 	margin-top: -10px;
 	margin-bottom: -10px;
-	top: -20px;
+	top: -310px;
 	z-index: 1;
+}
+
+.statisticName {
+	position: relative;
+	top: -45px;
+	
 }
 
 /* .DashboardCards img {
