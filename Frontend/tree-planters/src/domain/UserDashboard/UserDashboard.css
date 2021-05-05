@@ -1,0 +1,87 @@
+.UserDashboard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  border-width: medium;
+  border-style: solid;
+  border-color: #dbb95f;
+  width: 60%;
+  padding-bottom: 1rem;
+}
+
+.UserDashboard > Button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16%;
+  padding-right: 16%;
+}
+
+.UserCards {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.UserCard {
+  border-width: medium;
+  border-style: solid;
+  /* border-color: #dbb95f; */
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  height: 9rem;
+  color: white;
+  background-color: green;
+}
+
+.UserCards img {
+  /* width: 50%; */
+  height: 6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.UserCards li {
+  list-style-type: none;
+  float: left;
+  width: 30%;
+  flex-basis: 100%;
+}
+
+.UserCards ul {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .UserCards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .UserDashboard {
+    width: 75%;
+  }
+  .UserCards li {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .UserDashboard {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .UserDashboard {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .UserDashboard {
+    width: 60%;
+  }
+}
