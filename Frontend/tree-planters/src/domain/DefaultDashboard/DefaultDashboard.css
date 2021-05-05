@@ -81,6 +81,30 @@
 	
 }
 
+#windmill1 {
+	height: 292px;
+	position: absolute;
+	z-index: -4;
+	width: 100vw;
+	left: 90%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	bottom:37px;
+}
+
+#windmill2 {
+	height: 342px;
+	position: absolute;
+	z-index: -3;
+	width: 100vw;
+	left: 95%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	bottom:30px;
+}
+
 /* .DashboardCards img {
 	height: 6rem;
 	display: block;

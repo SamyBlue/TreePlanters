@@ -2,17 +2,24 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 import './DefaultDashboard.css';
 import Lottie from 'react-lottie';
-import animationData from '../../lotties/21751-circular-progress-bar.json';
+import circularAnimation from '../../lotties/21751-circular-progress-bar.json';
+import windmillAnimation from '../../lotties/15422-wind-mill-animation.json';
 
 const TREES_PLANTED = 1000; //! TEMP VALUE
 const CARBON_SAVED = 10; //! TEMP VALUE
 const MONEY_RAISED = 1; //! TEMP VALUE
 
-const lottieOptions = {
+const lottieCircular = {
 	loop: true,
 	autoplay: true,
-	animationData: animationData,
+	animationData: circularAnimation,
 };
+
+const lottieWindmill = {
+	loop: true,
+	autoplay: true,
+	animationData: windmillAnimation,
+}
 
 const DefaultDashboard = ({ openDonateModal }) => {
 	const [index, setIndex] = useState(0);
@@ -48,6 +55,18 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<img src={imageList[index % 4]} alt='' />
 			</div>
 
+			<div
+				id='windmill1'
+			>
+				<Lottie options={lottieWindmill} />
+			</div>
+
+			<div
+				id='windmill2'
+			>
+				<Lottie options={lottieWindmill} />
+			</div>
+
 			<ul className='DashboardCards'>
 				<li>
 					{/* <img src='growingtree.gif' alt='growing tree' /> */}
@@ -65,7 +84,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							style={{ zIndex: -1 }}
 						/>
 						<div id='CircularBar'>
-							<Lottie options={lottieOptions} />
+							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Trees Planted</p>
 						<p className='statistic'>{TREES_PLANTED}</p>
@@ -91,7 +110,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							style={{ zIndex: -1 }}
 						/>
 						<div id='CircularBar'>
-							<Lottie options={lottieOptions} />
+							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Carbon Saved</p>
 						<p className='statistic'>{CARBON_SAVED} kg</p>
@@ -117,7 +136,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							style={{ zIndex: -1 }}
 						/>
 						<div id='CircularBar'>
-							<Lottie options={lottieOptions} />
+							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Money Raised</p>
 						<p className='statistic'>£{MONEY_RAISED}</p>
