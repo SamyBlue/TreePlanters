@@ -5,6 +5,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from app.models import db, User, Trees, Donations
 import json
 import sqlite3
+from app.map_coords import get_coords
 
 @app.route('/')
 def hello():
@@ -59,6 +60,7 @@ def trees():
     elif request.method == 'POST' and request.is_json:
         # add an anonymous tree
         content = request.get_json()
+        coords = get_coords()
         # if content['tree_type'] in ['ash','beech',birch']:
         #   add to database 
         # else:
@@ -66,8 +68,8 @@ def trees():
         newTree = Trees(
             tree_type = content['tree_type'],
             year_planted = content['year_planted'],
-            lat = content['lat'],
-            lng = content['lng'],
+            lat = coords[0],
+            lng = coords[1],
             user_id = None)
         db.session.add(newTree)
         db.session.commit()
@@ -88,12 +90,13 @@ def userTrees(user_id):
     elif request.method == 'POST' and request.is_json:
         # add tree for this user
         # this_user = User.query.filter_by(username == username).first()
+        coords=get_coords()
         content = request.get_json()
         newTree = Trees(
             tree_type = content['tree_type'],
             year_planted = content['year_planted'],
-            lat = content['lat'],
-            lng = content['lng'],
+            lat = coords[0],
+            lng = cooords[1],
             user_id = user_id)
         db.session.add(newTree)
         db.session.commit()
