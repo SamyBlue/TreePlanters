@@ -16,12 +16,15 @@ const LoginPage = ({ closeModal }) => {
 		const fetchData = await login(
 			formFields['Username'],
 			formFields['Paassword*']
-		);
+		).catch((error) => {
+			alert(error);
+			throw Error(error);
+		}); //Remove the catch in production. This is used to see the error easily in development
 
 		setUserData({
 			loggedIn: true,
-			username: fetchData['username'],
-			user_id: fetchData['user_id'],
+			username: formFields['Username'] /* fetchData['username'], */,
+			user_id: formFields['Paassword*'] /* fetchData['user_id'], */,
 		});
 
 		closeModal();
