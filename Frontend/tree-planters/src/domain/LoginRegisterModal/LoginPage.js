@@ -1,12 +1,31 @@
 import React from 'react';
 import Form from '../../components/Forms/Form';
 import FormSubmit from '../../components/Forms/FormSubmit';
+import login from '../../services/loginService';
+import { useUserData } from '../../hooks/useUserData';
 
 const LoginPage = ({ closeModal }) => {
+	const [userData, setUserData] = useUserData();
+
 	const [formFields, setFormFields] = React.useState({
 		Username: '',
 		'Password*': '',
 	});
+
+	const onSubmit = async () => {
+		const fetchData = await login(
+			formFields['Username'],
+			formFields['Paassword*']
+		);
+
+		setUserData({
+			loggedIn: true,
+			username: fetchData['username'],
+			user_id: fetchData['user_id'],
+		});
+
+		closeModal();
+	};
 
 	return (
 		<div>
@@ -17,6 +36,7 @@ const LoginPage = ({ closeModal }) => {
 				attemptSubmitMsg='Logging in...'
 				failedSubmitMsg="Some of your information isn't correct. Please try again."
 				color='#2e963a'
+				onSubmit={onSubmit}
 			/>
 		</div>
 	);

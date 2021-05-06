@@ -29,7 +29,10 @@ export default async function login(Username, Password) {
 	})
 		.then(handleErrors)
 		.then((response) => response.json())
-		.catch((error) => console.log(error));
+		.catch((error) => {
+			alert(error);
+			return;
+		});
 
 	return { username: data['username'], user_id: data['user_id'] };
 }

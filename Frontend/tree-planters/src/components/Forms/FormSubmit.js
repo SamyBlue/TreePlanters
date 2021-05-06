@@ -30,10 +30,10 @@ const FormSubmit = ({
 
 	//wrap onSubmit with retry and attempting logic
 
-	const onClick = () => {
+	const onClick = async () => {
 		setAttemptingSubmit(true);
 		try {
-			onSubmit();
+			const submit = await onSubmit();
 		} catch {
 			setRetrySubmit(true);
 		}
