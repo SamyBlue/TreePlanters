@@ -15,16 +15,16 @@ const LoginPage = ({ closeModal }) => {
 	const onSubmit = async () => {
 		const fetchData = await login(
 			formFields['Username'],
-			formFields['Paassword*']
+			formFields['Password*']
 		).catch((error) => {
 			alert(error);
-			throw Error(error);
-		}); //Remove the catch in production. This is used to see the error easily in development
+			throw Error(error); //prevents below setUserData() line from executing
+		}); //Remove this catch in production as it is redundant. This is used to see the error easily in development
 
 		setUserData({
 			loggedIn: true,
-			username: formFields['Username'] /* fetchData['username'], */,
-			user_id: formFields['Paassword*'] /* fetchData['user_id'], */,
+			username: fetchData['username'],
+			user_id: fetchData['user_id'],
 		});
 
 		closeModal();

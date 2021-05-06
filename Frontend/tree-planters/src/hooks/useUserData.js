@@ -13,7 +13,7 @@ export function UserDataProvider({ children }) {
 	const [userData, setUserData] = useState({
 		loggedIn: false,
 		username: '',
-		user_id: '',
+		user_id: -1,
 	});
 
 	return (
