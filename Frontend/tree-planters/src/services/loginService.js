@@ -14,15 +14,15 @@ function handleErrors(response) {
  */
 
 export default async function login(Username, Password) {
-	const data = await fetch('http://localhost:5000/login', {
+	const data = await fetch(`${BASE_URL}/login`, {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			username: 'Test' /* Username, */,
-			password: '1234' /* Password, */,
+			username: Username,
+			password: Password,
 		}),
 	})
 		.then(handleErrors)
