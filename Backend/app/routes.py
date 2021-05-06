@@ -86,7 +86,7 @@ def trees():
             year_planted=content['year_planted'],
             lat=coords[0],
             lng=coords[1],
-            username=None),
+            username="Anonymous")
         db.session.add(newTree)
         db.session.commit()
         return 'Anonymous tree has been added'
@@ -100,7 +100,7 @@ def userTrees(username):
         # return all trees belonging to user
 
         # return content
-        content = Trees.query.filter_by(username=current_user.username).all()
+        content = Trees.query.filter_by(username=username).all()
         return jsonify(content)
 
     elif request.method == 'POST' and request.is_json:
@@ -147,7 +147,7 @@ def userDonations(username):
     if request.method == 'GET':
         # return all donations by the user
         content = Donations.query.filter_by(
-            username=current_user.username).all()
+            username=username).all()
         return jsonify(content)
 
     elif request.method == 'POST':
