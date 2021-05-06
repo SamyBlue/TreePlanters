@@ -60,8 +60,6 @@ function App() {
         openLeaderboardModal={openLeaderboardModal}
       />
 
-      <UserOrchard />
-
       <LeaderboardModal 
         open={LeaderboardModalOpen} 
         closeLeaderboardModal={closeLeaderboardModal}
@@ -80,8 +78,8 @@ function App() {
       <Title />
 
       <DefaultDashboard openDonateModal={openDonateModal} />
+
       <UserOrchard />
-      <Leaderboard />
 
       <ContentTiles />
     </div>
