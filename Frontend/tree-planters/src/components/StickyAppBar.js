@@ -7,6 +7,7 @@ import Button from './Button.js';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
+import useScrollPos from '../hooks/useScrollPos';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -23,19 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 	const classes = useStyles();
 
-	const [scrollPosition, setScrollPosition] = React.useState(0);
-	const handleScroll = () => {
-		const position = window.pageYOffset;
-		setScrollPosition(position);
-	};
-
-	React.useEffect(() => {
-		window.addEventListener('scroll', handleScroll, { passive: true });
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+	const scrollPosition = useScrollPos();
 
 	return (
 		<div className={classes.root}>
