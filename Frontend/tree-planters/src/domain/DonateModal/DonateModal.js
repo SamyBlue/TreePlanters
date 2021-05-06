@@ -14,7 +14,7 @@ const Donate = ({ open, closeDonateModal }) => {
   const [userData, setUserData] = useUserData();
 
   const onSubmit = async () => {
-    const data =await donate(Number(formFields["Donate Amount (£)"])).catch((error) => {
+    const data = await donate(Number(formFields["Donate Amount (£)"])).catch((error) => {
 		alert(error);
 		throw Error(error); //prevents below setUserData() line from executing
 	  }); //Remove this catch in production as it is redundant. This is used to see the error easily in development

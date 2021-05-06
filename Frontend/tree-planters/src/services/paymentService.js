@@ -15,7 +15,7 @@ function handleErrors(response) {
 
 export default async function donate(DonationAmount, Username) {
   const endOfUrl = Username ? `/${Username}` : "";
-  const data = await fetch(`${BASE_URL}/donations${endOfUrl}`, {
+  const data = await fetch(`http://localhost:5000/donations/Test`, {
     method: "POST",
     headers: {
       Accept: "application/json",
