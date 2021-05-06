@@ -131,7 +131,6 @@ def donations():
         
 #* Route works
 @app.route('/donations/<username>', methods=['GET','POST'])
-@login_required #! if things break it may be this line
 def userDonations(username):
     if request.method == 'GET':
         # return all donations by the user
