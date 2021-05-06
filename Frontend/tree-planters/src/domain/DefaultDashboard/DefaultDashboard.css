@@ -1,107 +1,107 @@
 .DefaultDashboard {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0px;
-	margin-bottom: -9px;
-	/* border-width: medium;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: -9px;
+  /* border-width: medium;
 	border-style: solid;
 	border-color: #dbb95f; */
-	width: 100%;
-	height: 600px;
-	padding-bottom: 1rem;
-	position: relative;
+  width: 100%;
+  height: 600px;
+  padding-bottom: 1rem;
+  position: relative;
 }
 
 .DefaultDashboard > Button {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 12%;
-	padding-right: 12%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 
 .DashboardCards {
-	display: flex;
-	justify-content: space-around;
-	padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
 }
 
 .DashboardCard {
-	/* border-width: medium;
+  /* border-width: medium;
 	border-style: solid;
 	background-color: #6bbf30; */
-	/* border-radius: 100%; */
-	text-align: center;
-	padding: 0.5rem;
-	margin: auto;
-	height: 300px;
-	width: 300px;
-	margin-top: -2vw;
-	font-size: 25px;
-	position: relative;
+  /* border-radius: 100%; */
+  text-align: center;
+  padding: 0.5rem;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  margin-top: -2vw;
+  font-size: 25px;
+  position: relative;
 }
 
 .BadgeLayer {
-	position: absolute;
-	/* 	background-color: blue; */
-	width: 100%;
-	height: 100%;
-	padding: 0.5rem;
-	transform: translate(-50%, -50%);
-	left: 50%;
-	top: 50%;
+  position: absolute;
+  /* 	background-color: blue; */
+  width: 90%;
+  height: 90%;
+  padding: 0.5rem;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
 
 #CircularBar {
-	position: relative;
-	/* 	background-color: blue; */
-	width: 300px;
-	height: 300px;
-	margin-left: auto;
-	margin-right: auto;
-	top: -22px;
-	z-index: -2;
+  position: relative;
+  /* 	background-color: blue; */
+  width: 270px;
+  height: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  top: -7px;
+  z-index: -2;
 }
 
 .statistic {
-	position: relative;
-	font-weight: bold;
-	font-size: 45px;
-	vertical-align: top;
-	margin-top: -10px;
-	margin-bottom: -10px;
-	top: -310px;
-	z-index: 1;
+  position: relative;
+  font-weight: bold;
+  font-size: 41.5px;
+  vertical-align: top;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  top: -290px;
+  z-index: 1;
 }
 
 .statisticName {
-	position: relative;
-	top: -45px;
+  position: relative;
+  top: -25px;
 }
 
 #windmill1 {
-	height: 292px;
-	position: absolute;
-	z-index: -4;
-	width: 100vw;
-	left: 90%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
-	bottom: 37px;
+  height: 292px;
+  position: absolute;
+  z-index: -4;
+  width: 100vw;
+  left: 90%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  bottom: 37px;
 }
 
 #windmill2 {
-	height: 342px;
-	position: absolute;
-	z-index: -3;
-	width: 100vw;
-	left: 95%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
-	bottom: 30px;
+  height: 342px;
+  position: absolute;
+  z-index: -3;
+  width: 100vw;
+  left: 95%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  bottom: 30px;
 }
 
 /* .DashboardCards img {
@@ -112,55 +112,55 @@
 } */
 
 .DashboardCards li {
-	list-style-type: none;
-	float: left;
-	width: 50%;
-	flex-basis: 100%;
+  list-style-type: none;
+  float: left;
+  width: 50%;
+  flex-basis: 100%;
 }
 
 .DashboardCards ul {
-	display: inline;
+  display: inline;
 }
 
 .Mountains {
-	margin-top: 60px;
-	background-repeat: repeat-x;
-	height: 292px;
-	position: absolute;
-	z-index: -5;
-	width: 100vw;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
-	bottom: 0;
+  margin-top: 60px;
+  background-repeat: repeat-x;
+  height: 292px;
+  position: absolute;
+  z-index: -5;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
-	.DashboardCards {
-		flex-direction: column;
-		align-items: center;
-	}
-	.DefaultDashboard {
-		width: 75%;
-		height: 1200px;
-	}
-	.DashboardCards li {
-		width: 90%;
-	}
-	.DashboardCard {
-		margin-top: 20px;
-	}
+  .DashboardCards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .DefaultDashboard {
+    width: 75%;
+    height: 1200px;
+  }
+  .DashboardCards li {
+    width: 90%;
+  }
+  .DashboardCard {
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (min-width: 600px) {
-	.DefaultDashboard {
-		width: 90%;
-	}
+  .DefaultDashboard {
+    width: 90%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-	.DefaultDashboard {
-		width: 85%;
-	}
+  .DefaultDashboard {
+    width: 85%;
+  }
 }

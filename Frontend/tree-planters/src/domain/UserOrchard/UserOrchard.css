@@ -1,8 +1,19 @@
 .UserOrchard {
   text-align: center;
-  border-color: green;
+  /* border-color: green;
   border-width: 10px;
-  border-style: solid;
+  border-style: solid; */
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.UserOrchard img {
+  /* width: 50%; */
+  height: 6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Trees {
@@ -16,4 +27,30 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.OrchardTitle {
+  text-align: center;
+}
+
+#discrete-slider {
+  font-family: StreetCornerBold, Poppins, Lucida Handwriting;
+  margin-bottom: 32px;
+}
+
+.Slider {
+  font-family: StreetCornerBold, Poppins, Lucida Handwriting;
+}
+
+.OrchardCard {
+  border-width: medium;
+  /* border-style: solid; */
+  /* border-color: #dbb95f; */
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  height: 15rem;
+  color: black;
+  /* background-color: green; */
+  width: 25%;
 }

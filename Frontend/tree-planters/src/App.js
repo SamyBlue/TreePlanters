@@ -7,6 +7,7 @@ import DonateModal from "./domain/DonateModal/DonateModal";
 /* import UserDashboard from './domain/UserDashboard/UserDashboard'; */
 import UserOrchard from "./domain/UserOrchard/UserOrchard";
 import Title from "./domain/Title/Title";
+import Leaderboard from "./components/Leaderboard";
 
 function App() {
   const [loginModalOpen, setLoginModalOpen] = React.useState(false);
@@ -49,8 +50,6 @@ function App() {
         openDonateModal={openDonateModal}
       />
 
-      <UserOrchard />
-
       <LoginRegisterModal
         open={loginModalOpen}
         closeLoginModal={closeLoginModal}
@@ -61,6 +60,8 @@ function App() {
       <Title />
 
       <DefaultDashboard openDonateModal={openDonateModal} />
+      <UserOrchard />
+      <Leaderboard />
 
       <ContentTiles />
     </div>
