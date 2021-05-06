@@ -1,6 +1,6 @@
 from app import app, bcrypt
 from flask import redirect, jsonify, request
-from flask_serialize import FlaskSerializeMixin
+# from flask_serialize import FlaskSerializeMixin
 from flask_login import login_user, current_user, logout_user, login_required
 from app.models import db, User, Trees, Donations
 import json
@@ -32,7 +32,8 @@ def register():
 #* Route works
 @app.route('/get_user_all', methods=['GET'])
 def get_user_all():
-    return User.get_delete_put_post()
+    content = User.query.order_by(User.id).all()
+    return jsonify(content)
 
 #* Route works
 @app.route("/login", methods=['GET', 'POST'])
@@ -55,16 +56,13 @@ def logout():
 def trees():
     if request.method == 'GET':
         # return all trees
-        return Trees.get_delete_put_post()
+        content = Trees.query.order_by(Trees.id).all()
+        return jsonify(content)
 
     elif request.method == 'POST' and request.is_json:
         # add an anonymous tree
         content = request.get_json()
         coords = get_coords()
-        # if content['tree_type'] in ['ash','beech',birch']:
-        #   add to database 
-        # else:
-        #   return 'Cannot plant this type of tree', 406
         newTree = Trees(
             tree_type = content['tree_type'],
             year_planted = content['year_planted'],
@@ -82,9 +80,10 @@ def userTrees(user_id):
     if request.method == 'GET':
         # return all trees belonging to user
         
-        return content
-        # content = Trees.query.filter_by(user_id=current_user.id).all()
-
+        # return content
+        content = Trees.query.filter_by(user_id=current_user.id).all()
+        return jsonify(content)
+        
         
         
     elif request.method == 'POST' and request.is_json:
@@ -96,7 +95,7 @@ def userTrees(user_id):
             tree_type = content['tree_type'],
             year_planted = content['year_planted'],
             lat = coords[0],
-            lng = cooords[1],
+            lng = coords[1],
             user_id = user_id)
         db.session.add(newTree)
         db.session.commit()
@@ -107,9 +106,8 @@ def userTrees(user_id):
 def donations():
     if request.method == 'GET':
         # return all donations 
-        # donationList = Donations.query.order_by(Donations.id).all()
-        # return jsonify(donationList)
-        return Donations.get_delete_put_post()
+        content = Donations.query.order_by(Donations.id).all()
+        return jsonify(content)
 
     elif request.method == 'POST' and request.is_json:
         # add anonymous donation to database
@@ -127,7 +125,7 @@ def donations():
 def userDonations(user_id):
     if request.method == 'GET':
         # return all donations by the user
-        content = Donations.query.filter_by(user_id == user_id)
+        content = Donations.query.filter_by(user_id=current_user.id).all()
         return jsonify(content)
         
     elif request.method == 'POST':

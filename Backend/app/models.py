@@ -3,7 +3,8 @@ from app import login_manager #* comment this when making database
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import UserMixin, LoginManager
-from flask_serialize import FlaskSerializeMixin
+# from flask_serialize import FlaskSerializeMixin
+from dataclasses import dataclass
 
 app = Flask(__name__)
 
@@ -14,13 +15,17 @@ db = SQLAlchemy(app)
 # login_manager.init_app(app)
 # login_manager.login_view = 'login'
 
-FlaskSerializeMixin.db = db
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(FlaskSerializeMixin, db.Model, UserMixin):
+@dataclass
+class User(db.Model, UserMixin):
+    id: int
+    username: str
+    email: str
+    password: str
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -48,21 +53,29 @@ class User(FlaskSerializeMixin, db.Model, UserMixin):
     def __repr__(self):
         return "<User '{}'>".format(self.username)
 
-class Trees(FlaskSerializeMixin, db.Model):
+@dataclass
+class Trees(db.Model):
+    id: int
+    user_id: int
+    tree_type: str
+    year_planted: int
+    lat: float
+    lng: float
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=False, nullable=True) # Can be anonymous
     tree_type = db.Column(db.String(30), nullable=False)
     year_planted = db.Column(db.Integer, nullable=False)
     lat = db.Column(db.Float, nullable=False)
     lng = db.Column(db.Float, nullable=False)
-    
-    #serializer fields
-    create_fields = update_fields = ['user_id', 'tree_type', 'year_planted', 'lat', 'lng']
-    
+        
     def __repr__(self):
-        return f"Tree('{self.username}', '{self.tree_type}', '{self.year_planted}')"
+        return f"Tree('{self.tree_type}', '{self.year_planted}')"
 
-class Donations(FlaskSerializeMixin, db.Model):
+@dataclass
+class Donations(db.Model):
+    id: int
+    user_id: int
+    donation_amount: float
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=False, nullable=True)
     donation_amount = db.Column(db.Float, unique=False, nullable=False)
