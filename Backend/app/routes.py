@@ -6,8 +6,10 @@ from app.models import db, User, Trees, Donations
 import json
 import sqlite3
 from app.map_coords import get_coords
+from flask_cors import cross_origin
 
 @app.route('/')
+@cross_origin()
 def hello():
     return "Plant trees pls"
 
@@ -43,7 +45,14 @@ def login():
     if not user or not bcrypt.check_password_hash(user.password, content['password']):
         return abort(403)
     login_user(user)
-    return redirect('/')
+
+    response = {
+        "username" : user.username,
+        "user_id" : user.id
+    }
+    
+    return jsonify(response)
+    
     
 #* Route works
 @app.route("/logout", methods=['POST'])
