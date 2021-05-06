@@ -73,6 +73,9 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='growingtree.gif' alt='growing tree' /> */}
 					<div className='DashboardCard'>
+						<div className='BadgePin'>
+							<p>1</p>
+						</div>
 						<img
 							src='Badge.png'
 							alt='Badge'
@@ -85,7 +88,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							className='BadgeLayer'
 							style={{ zIndex: -1 }}
 						/>
-						<div id='CircularBar'>
+						<div className='CircularBar'>
 							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Trees Planted</p>
@@ -99,6 +102,9 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='foot.png' alt='carbon footprint' /> */}
 					<div className='DashboardCard'>
+						<div className='BadgePin'>
+							<p>2</p>
+						</div>
 						<img
 							src='Badge.png'
 							alt='Badge'
@@ -111,7 +117,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							className='BadgeLayer'
 							style={{ zIndex: -1 }}
 						/>
-						<div id='CircularBar'>
+						<div className='CircularBar'>
 							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Carbon Saved</p>
@@ -125,6 +131,9 @@ const DefaultDashboard = ({ openDonateModal }) => {
 				<li>
 					{/* <img src='pig.png' alt='piggy bank' /> */}
 					<div className='DashboardCard'>
+						<div className='BadgePin'>
+							<p>3</p>
+						</div>
 						<img
 							src='Badge.png'
 							alt='Badge'
@@ -137,7 +146,7 @@ const DefaultDashboard = ({ openDonateModal }) => {
 							className='BadgeLayer'
 							style={{ zIndex: -1 }}
 						/>
-						<div id='CircularBar'>
+						<div className='CircularBar'>
 							<Lottie options={lottieCircular} />
 						</div>
 						<p className='statisticName'>Money Raised</p>
