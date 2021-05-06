@@ -1,0 +1,43 @@
+#Title {
+	display: block;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#Sun {
+	width: 40%;
+	position: absolute;
+	left: 30%;
+	top: 30%;
+	z-index: -10;
+	transform: translate(-50%, -50%);
+}
+
+#Subtitle {
+	position: absolute;
+	width: 21%;
+	top: 77%;
+	left: 50%;
+	text-align: center;
+	font-size: 2vw;
+	transform: translate(-50%, -50%);
+}
+
+#Cloud1 {
+	width: 25%;
+	position: absolute;
+	left: 10%;
+	top: 90%;
+	z-index: -9;
+	transform: translate(-50%, -50%);
+}
+
+#Cloud2 {
+	width: 20%;
+	position: absolute;
+	left: 87%;
+	top: 40%;
+	z-index: -9;
+	transform: translate(-50%, -50%);
+}

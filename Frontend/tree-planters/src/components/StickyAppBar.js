@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Button from './Button.js';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import Badge from '@material-ui/core/Badge';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -20,24 +23,54 @@ const useStyles = makeStyles((theme) => ({
 export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 	const classes = useStyles();
 
+	const [scrollPosition, setScrollPosition] = React.useState(0);
+	const handleScroll = () => {
+		const position = window.pageYOffset;
+		setScrollPosition(position);
+	};
+
+	React.useEffect(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 		<div className={classes.root}>
-			<AppBar style={{ backgroundColor: 'rgb(135, 133, 50)' }}>
+			<AppBar
+				style={{
+					backgroundColor: 'rgba(66, 128, 54, 0.95)',
+					background: `linear-gradient(0deg, rgba(66, 128, 54, ${
+						1 - 0.01 * scrollPosition
+					}) 0%, rgba(32, 64, 54, 0.95) 100%)`,
+					boxShadow: `${scrollPosition > 5 ? 'none' : ''}`,
+				}}
+			>
 				<Toolbar>
-					<img src='logo.jpg' alt='TreePlanters-logo' width='60' height='60' />
+					<img src='logo.png' alt='TreePlanters-logo' width='80' height='80' />
 					<Typography variant='h6' className={classes.title}>
-						Tree Planters
+						{/* Leave empty unless want title in top-left corner */}
 					</Typography>
-					<Button
-						style={{ backgroundColor: '#DBB95F' }}
+					<IconButton
 						className={classes.menuButton}
+						style={{ position: 'relative', left: '15px' }}
+					>
+						<Badge badgeContent={2} color='secondary'>
+							<NotificationsIcon style={{ height: '50px', width: '50px' }} />
+						</Badge>
+					</IconButton>
+					<Button
+						className={classes.menuButton}
+						color={'#00552a'}
 						onClick={openDonateModal}
 					>
 						Donate
 					</Button>
 					<Button
-						style={{ backgroundColor: '#DBB95F' }}
 						className={classes.menuButton}
+						color={'#699a30'}
 						onClick={openLoginModal}
 					>
 						Login

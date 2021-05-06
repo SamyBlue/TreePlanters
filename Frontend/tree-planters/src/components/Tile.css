@@ -7,14 +7,17 @@
 	color: white;
 	text-align: center;
 	overflow: none;
+	/* position: relative; */
 }
 
 .TileText {
-	width: 50%;
+	width: 70%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 6rem;
+	margin-top: 5rem;
+	margin-bottom: 0;
+	text-align: left;
 }
 
 .Tile img {

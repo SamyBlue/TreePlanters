@@ -2,8 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { FormControl } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import SendIcon from '@material-ui/icons/Send';
+import Button from '../Button';
 
 const useStyles = makeStyles((theme) => ({
 	margin: {
@@ -24,7 +23,7 @@ const FormSubmit = ({
 	onSubmit,
 	attemptSubmitMsg,
 	failedSubmitMsg,
-	style,
+	color,
 }) => {
 	const [retrySubmit, setRetrySubmit] = React.useState(false);
 	const [attemptingSubmit, setAttemptingSubmit] = React.useState(false);
@@ -46,13 +45,7 @@ const FormSubmit = ({
 	return (
 		<div>
 			<FormControl className={clsx(classes.margin, classes.textField)}>
-				<Button
-					variant='contained'
-					style={{ backgroundColor: 'green' }}
-					className={classes.button}
-					endIcon={<SendIcon />}
-					onClick={onClick}
-				>
+				<Button color={color} className={classes.button} onClick={onClick}>
 					{attemptingSubmit ? attemptSubmitMsg : label}
 				</Button>
 			</FormControl>

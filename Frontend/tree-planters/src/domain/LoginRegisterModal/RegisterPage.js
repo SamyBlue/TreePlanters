@@ -18,6 +18,7 @@ const RegisterPage = ({ closeModal }) => {
 				label='Register'
 				attemptSubmitMsg='Registering...'
 				failedSubmitMsg="Some of your information isn't correct. Please try again."
+				color='#22B4CF'
 			/>
 		</div>
 	);

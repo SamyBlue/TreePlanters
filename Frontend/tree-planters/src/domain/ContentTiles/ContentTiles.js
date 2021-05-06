@@ -10,7 +10,7 @@ const ContentTiles = () => {
 			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
             year once fully grown. Over a lifetime of 100 years, one tree could
             absorb around a tonne of CO2.`,
-			color: '#dbb95f',
+			color: '#214034',
 		},
 		{
 			image:

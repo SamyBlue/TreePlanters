@@ -1,35 +1,36 @@
-import React from 'react';
-import StickyAppBar from './components/StickyAppBar';
-import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
-import ContentTiles from './domain/ContentTiles/ContentTiles';
-import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
-import DonateModal from './domain/DonateModal/DonateModal';
+import React from "react";
+import StickyAppBar from "./components/StickyAppBar";
+import DefaultDashboard from "./domain/DefaultDashboard/DefaultDashboard";
+import ContentTiles from "./domain/ContentTiles/ContentTiles";
+import LoginRegisterModal from "./domain/LoginRegisterModal/LoginRegisterModal";
+import DonateModal from "./domain/DonateModal/DonateModal";
 /* import UserDashboard from './domain/UserDashboard/UserDashboard'; */
-import UserOrchard from './domain/UserOrchard/UserOrchard';
+import UserOrchard from "./domain/UserOrchard/UserOrchard";
+import Title from "./domain/Title/Title";
 
 function App() {
-	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
-	const [donateModalOpen, setDonateModalOpen] = React.useState(false);
+  const [loginModalOpen, setLoginModalOpen] = React.useState(false);
+  const [donateModalOpen, setDonateModalOpen] = React.useState(false);
 
-	const openLoginModal = () => {
-		setLoginModalOpen(true);
-	};
+  const openLoginModal = () => {
+    setLoginModalOpen(true);
+  };
 
-	const closeLoginModal = () => {
-		setLoginModalOpen(false);
-	};
+  const closeLoginModal = () => {
+    setLoginModalOpen(false);
+  };
 
-	const openDonateModal = () => {
-		setDonateModalOpen(true);
-	};
+  const openDonateModal = () => {
+    setDonateModalOpen(true);
+  };
 
-	const closeDonateModal = () => {
-		setDonateModalOpen(false);
-	};
+  const closeDonateModal = () => {
+    setDonateModalOpen(false);
+  };
 
-	return (
-		<div className='App'>
-			{/* Main app 
+  return (
+    <div className="App">
+      {/* Main app 
 			<StickyAppBar />
 			
 			<UserDashboard />*
@@ -43,27 +44,27 @@ function App() {
 			<Footer />*Uses accordion.js
 			*/}
 
-			<StickyAppBar
-				openLoginModal={openLoginModal}
-				openDonateModal={openDonateModal}
-			/>
+      <StickyAppBar
+        openLoginModal={openLoginModal}
+        openDonateModal={openDonateModal}
+      />
 
-			<UserOrchard />
+      <UserOrchard />
 
-			<LoginRegisterModal
-				open={loginModalOpen}
-				closeLoginModal={closeLoginModal}
-			/>
+      <LoginRegisterModal
+        open={loginModalOpen}
+        closeLoginModal={closeLoginModal}
+      />
 
-			<DonateModal open={donateModalOpen} closeDonateModal={closeDonateModal} />
+      <DonateModal open={donateModalOpen} closeDonateModal={closeDonateModal} />
 
-			<DefaultDashboard openDonateModal={openDonateModal} />
+      <Title />
 
-			{/* <UserDashboard /> */}
+      <DefaultDashboard openDonateModal={openDonateModal} />
 
-			<ContentTiles />
-		</div>
-	);
+      <ContentTiles />
+    </div>
+  );
 }
 
 export default App;

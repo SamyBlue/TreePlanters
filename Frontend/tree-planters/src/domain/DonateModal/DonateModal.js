@@ -18,6 +18,7 @@ const Donate = ({ open, closeDonateModal }) => {
 				label='Send'
 				attemptSubmitMsg='Sending...'
 				failedSubmitMsg="Some of your information isn't correct. Please try again."
+				color='#2e963a'
 			/>
 		</Modal>
 	);
