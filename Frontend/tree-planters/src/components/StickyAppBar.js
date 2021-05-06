@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function StickyAppBar({ openLoginModal, openDonateModal }) {
+export default function StickyAppBar({ openLoginModal, openDonateModal, openLeaderboardModal }) {
 	const classes = useStyles();
 
 	const [scrollPosition, setScrollPosition] = React.useState(0);
@@ -61,6 +61,13 @@ export default function StickyAppBar({ openLoginModal, openDonateModal }) {
 							<NotificationsIcon style={{ height: '50px', width: '50px' }} />
 						</Badge>
 					</IconButton>
+					<Button
+						className={classes.menuButton}
+						color={'#00552a'}
+						onClick={openLeaderboardModal}
+					>
+						Leaderboard
+					</Button>
 					<Button
 						className={classes.menuButton}
 						color={'#00552a'}

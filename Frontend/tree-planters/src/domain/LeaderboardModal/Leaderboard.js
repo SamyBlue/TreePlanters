@@ -115,7 +115,7 @@ console.log(rows)
 
 const useStyles2 = makeStyles({
   table: {
-    width: '30%',
+    width: '100%',
     margin: 'auto',
   },
 });
@@ -138,7 +138,7 @@ const Leaderboard = () => {
 
   return (
     <TableContainer>
-      <Paper className={classes.table} elevation={9}>
+      
         <div style={{width: '40%', marginLeft: 'auto', marginRight: 'auto' }}>
           <h1 style={{textAlign:'center', color:'black'}}>Leaderboard</h1>
         </div>    
@@ -189,7 +189,7 @@ const Leaderboard = () => {
           </TableRow>
         </TableFooter>
 
-      </Paper> 
+    
     </TableContainer>
   );
 };

@@ -7,11 +7,12 @@ import DonateModal from "./domain/DonateModal/DonateModal";
 /* import UserDashboard from './domain/UserDashboard/UserDashboard'; */
 import UserOrchard from "./domain/UserOrchard/UserOrchard";
 import Title from "./domain/Title/Title";
-import Leaderboard from "./components/Leaderboard";
+import LeaderboardModal from "./domain/LeaderboardModal/LeaderboardModal";
 
 function App() {
   const [loginModalOpen, setLoginModalOpen] = React.useState(false);
   const [donateModalOpen, setDonateModalOpen] = React.useState(false);
+  const [LeaderboardModalOpen, setLeaderboardModalOpen] = React.useState(false);
 
   const openLoginModal = () => {
     setLoginModalOpen(true);
@@ -27,6 +28,14 @@ function App() {
 
   const closeDonateModal = () => {
     setDonateModalOpen(false);
+  };
+
+  const openLeaderboardModal = () => {
+    setLeaderboardModalOpen(true);
+  };
+
+  const closeLeaderboardModal = () => {
+    setLeaderboardModalOpen(false);
   };
 
   return (
@@ -48,6 +57,14 @@ function App() {
       <StickyAppBar
         openLoginModal={openLoginModal}
         openDonateModal={openDonateModal}
+        openLeaderboardModal={openLeaderboardModal}
+      />
+
+      <UserOrchard />
+
+      <LeaderboardModal 
+        open={LeaderboardModalOpen} 
+        closeLeaderboardModal={closeLeaderboardModal}
       />
 
       <LoginRegisterModal
@@ -55,7 +72,10 @@ function App() {
         closeLoginModal={closeLoginModal}
       />
 
-      <DonateModal open={donateModalOpen} closeDonateModal={closeDonateModal} />
+      <DonateModal 
+        open={donateModalOpen} 
+        closeDonateModal={closeDonateModal} 
+      />
 
       <Title />
 
