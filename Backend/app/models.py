@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
-from app import login_manager  # * comment this when making database
+# from app import login_manager  # * comment this when making database
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask_login import UserMixin, LoginManager
+# from flask_login import UserMixin, LoginManager
 # from flask_serialize import FlaskSerializeMixin
 from dataclasses import dataclass
 
@@ -16,13 +16,13 @@ db = SQLAlchemy(app)
 # login_manager.login_view = 'login'
 
 
-@login_manager.user_loader
+# @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
 
 @dataclass
-class User(db.Model, UserMixin):
+class User(db.Model):
     id: int
     username: str
     email: str

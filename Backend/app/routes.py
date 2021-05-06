@@ -1,7 +1,7 @@
 from app import app, bcrypt
 from flask import redirect, jsonify, request
 # from flask_serialize import FlaskSerializeMixin
-from flask_login import login_user, current_user, logout_user, login_required
+# from flask_login import login_user, current_user, logout_user, login_required
 from app.models import db, User, Trees, Donations
 import json
 import sqlite3
@@ -51,7 +51,7 @@ def login():
     user = User.query.filter_by(username=content['username']).first()
     if not user or not bcrypt.check_password_hash(user.password, content['password']):
         return 403
-    login_user(user)
+    # login_user(user)
 
     response = {
         "username": user.username,
@@ -64,7 +64,7 @@ def login():
 # * Route works
 @app.route("/logout", methods=['POST'])
 def logout():
-    logout_user()
+    # logout_user()
     return redirect('/')
 
 # * Route works
@@ -100,7 +100,7 @@ def userTrees(username):
         # return all trees belonging to user
 
         # return content
-        content = Trees.query.filter_by(username=current_user.username).all()
+        content = Trees.query.filter_by(username=username).all()
         return jsonify(content)
 
     elif request.method == 'POST' and request.is_json:
@@ -147,7 +147,7 @@ def userDonations(username):
     if request.method == 'GET':
         # return all donations by the user
         content = Donations.query.filter_by(
-            username=current_user.username).all()
+            username=username).all()
         return jsonify(content)
 
     elif request.method == 'POST':
