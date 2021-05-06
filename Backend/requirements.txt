@@ -3,3 +3,6 @@ Flask_WTF==0.14.3
 Flask_SQLAlchemy==2.5.1
 WTForms==2.3.3
 bcrypt==3.2.0
+flask-serialize
+Flask-Login
+flask-cors

@@ -1,21 +1,26 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 
-const UserDataContext = React.createContext()
-const UserDataUpdateContext = React.createContext()
+const UserDataContext = React.createContext();
+const UserDataUpdateContext = React.createContext();
 
 export function useUserData() {
-	return [useContext(UserDataContext), useContext(UserDataUpdateContext)]
+	return [useContext(UserDataContext), useContext(UserDataUpdateContext)];
 }
 
-//Example usage: 
+//Example usage:
 
-export function UserDataProvider({children}) {
-    const [userData, setUserData] = useState({})
-	
+export function UserDataProvider({ children }) {
+	const [userData, setUserData] = useState({
+		loggedIn: false,
+		username: '',
+		user_id: -1,
+	});
+
 	return (
 		<UserDataContext.Provider value={userData}>
 			<UserDataUpdateContext.Provider value={setUserData}>
 				{children}
 			</UserDataUpdateContext.Provider>
 		</UserDataContext.Provider>
-)}
+	);
+}

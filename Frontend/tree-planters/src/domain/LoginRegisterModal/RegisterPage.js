@@ -7,7 +7,7 @@ const RegisterPage = ({ closeModal }) => {
 		Username: '',
 		'Password*': '',
 		'Confirm Password*': '',
-		'Postal Code': '',
+		Email: '',
 	});
 
 	return (

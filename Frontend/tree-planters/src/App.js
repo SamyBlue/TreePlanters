@@ -1,48 +1,50 @@
-import React from "react";
-import StickyAppBar from "./components/StickyAppBar";
-import DefaultDashboard from "./domain/DefaultDashboard/DefaultDashboard";
-import ContentTiles from "./domain/ContentTiles/ContentTiles";
-import LoginRegisterModal from "./domain/LoginRegisterModal/LoginRegisterModal";
-import DonateModal from "./domain/DonateModal/DonateModal";
+import React from 'react';
+import StickyAppBar from './components/StickyAppBar';
+import DefaultDashboard from './domain/DefaultDashboard/DefaultDashboard';
+import ContentTiles from './domain/ContentTiles/ContentTiles';
+import LoginRegisterModal from './domain/LoginRegisterModal/LoginRegisterModal';
+import DonateModal from './domain/DonateModal/DonateModal';
 /* import UserDashboard from './domain/UserDashboard/UserDashboard'; */
-import UserOrchard from "./domain/UserOrchard/UserOrchard";
-import Title from "./domain/Title/Title";
-import LeaderboardModal from "./domain/LeaderboardModal/LeaderboardModal";
+import UserOrchard from './domain/UserOrchard/UserOrchard';
+import Title from './domain/Title/Title';
+import { UserDataProvider } from './hooks/useUserData';
+import LeaderboardModal from './domain/LeaderboardModal/LeaderboardModal';
 
 function App() {
-  const [loginModalOpen, setLoginModalOpen] = React.useState(false);
-  const [donateModalOpen, setDonateModalOpen] = React.useState(false);
-  const [LeaderboardModalOpen, setLeaderboardModalOpen] = React.useState(false);
+	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
+	const [donateModalOpen, setDonateModalOpen] = React.useState(false);
+	const [LeaderboardModalOpen, setLeaderboardModalOpen] = React.useState(false);
 
-  const openLoginModal = () => {
-    setLoginModalOpen(true);
-  };
+	const openLoginModal = () => {
+		setLoginModalOpen(true);
+	};
 
-  const closeLoginModal = () => {
-    setLoginModalOpen(false);
-  };
+	const closeLoginModal = () => {
+		setLoginModalOpen(false);
+	};
 
-  const openDonateModal = () => {
-    setDonateModalOpen(true);
-  };
+	const openDonateModal = () => {
+		setDonateModalOpen(true);
+	};
 
-  const closeDonateModal = () => {
-    setDonateModalOpen(false);
-  };
+	const closeDonateModal = () => {
+		setDonateModalOpen(false);
+	};
 
-  const openLeaderboardModal = () => {
-    setLeaderboardModalOpen(true);
-  };
+	const openLeaderboardModal = () => {
+		setLeaderboardModalOpen(true);
+	};
 
-  const closeLeaderboardModal = () => {
-    setLeaderboardModalOpen(false);
-  };
+	const closeLeaderboardModal = () => {
+		setLeaderboardModalOpen(false);
+	};
 
-  return (
-    <div className="App">
-      {/* Main app 
+	return (
+		<div className='App'>
+			<UserDataProvider>
+				{/* Main app 
 			<StickyAppBar />
-			
+      
 			<UserDashboard />*
 
 			<DefaultDashboard />
@@ -54,36 +56,38 @@ function App() {
 			<Footer />*Uses accordion.js
 			*/}
 
-      <StickyAppBar
-        openLoginModal={openLoginModal}
-        openDonateModal={openDonateModal}
-        openLeaderboardModal={openLeaderboardModal}
-      />
+				<StickyAppBar
+					openLoginModal={openLoginModal}
+					openDonateModal={openDonateModal}
+					openLeaderboardModal={openLeaderboardModal}
+				/>
 
-      <LeaderboardModal 
-        open={LeaderboardModalOpen} 
-        closeLeaderboardModal={closeLeaderboardModal}
-      />
+				<UserOrchard />
 
-      <LoginRegisterModal
-        open={loginModalOpen}
-        closeLoginModal={closeLoginModal}
-      />
+				<LeaderboardModal
+					open={LeaderboardModalOpen}
+					closeLeaderboardModal={closeLeaderboardModal}
+				/>
 
-      <DonateModal 
-        open={donateModalOpen} 
-        closeDonateModal={closeDonateModal} 
-      />
+				<LoginRegisterModal
+					open={loginModalOpen}
+					closeLoginModal={closeLoginModal}
+				/>
 
-      <Title />
+				<DonateModal
+					open={donateModalOpen}
+					closeDonateModal={closeDonateModal}
+				/>
 
-      <DefaultDashboard openDonateModal={openDonateModal} />
+				<Title />
 
-      <UserOrchard />
+				<DefaultDashboard openDonateModal={openDonateModal} />
+				<UserOrchard />
 
-      <ContentTiles />
-    </div>
-  );
+				<ContentTiles />
+			</UserDataProvider>
+		</div>
+	);
 }
 
 export default App;
