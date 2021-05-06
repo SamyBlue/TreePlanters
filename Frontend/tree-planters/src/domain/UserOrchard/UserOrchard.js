@@ -6,6 +6,8 @@ import "./UserOrchard.css";
 import GoogleMapReact from "google-map-react";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import getTrees from "../../services/treeService";
+import { useUserData } from "../../hooks/useUserData";
 
 const muiTheme = createMuiTheme({
   overrides: {
@@ -86,72 +88,72 @@ for (let donation of donation_data) {
   total_donations = total_donations + donation.donation_amount;
 }
 
-const tree_data = [
-  {
-    tree_id: "1",
-    user_id: "1",
-    type: "ash",
-    year_planted: 2021,
-    lat: 52.9516302,
-    lng: 1.0106029,
-  },
-  {
-    tree_id: "2",
-    user_id: "1",
-    type: "ash",
-    year_planted: 2021,
-    lat: 52.9516302,
-    lng: 1.0106029,
-  },
-  {
-    tree_id: "3",
-    user_id: "1",
-    type: "pine",
-    year_planted: 2021,
-    lat: 52.9516302,
-    lng: 1.0106029,
-  },
-  {
-    tree_id: "4",
-    user_id: "1",
-    type: "pine",
-    year_planted: 2021,
-    lat: 52.9516302,
-    lng: 1.0106029,
-  },
-  {
-    tree_id: "5",
-    user_id: "1",
-    type: "beech",
-    year_planted: 2021,
-    lat: 52.9408065,
-    lng: 0.9393098,
-  },
-  {
-    tree_id: "6",
-    user_id: "1",
-    type: "beech",
-    year_planted: 2021,
-    lat: 52.9408065,
-    lng: 0.9393098,
-  },
-];
+// const tree_data = [
+//   {
+//     tree_id: "1",
+//     user_id: "1",
+//     type: "ash",
+//     year_planted: 2021,
+//     lat: 52.9516302,
+//     lng: 1.0106029,
+//   },
+//   {
+//     tree_id: "2",
+//     user_id: "1",
+//     type: "ash",
+//     year_planted: 2021,
+//     lat: 52.9516302,
+//     lng: 1.0106029,
+//   },
+//   {
+//     tree_id: "3",
+//     user_id: "1",
+//     type: "pine",
+//     year_planted: 2021,
+//     lat: 52.9516302,
+//     lng: 1.0106029,
+//   },
+//   {
+//     tree_id: "4",
+//     user_id: "1",
+//     type: "pine",
+//     year_planted: 2021,
+//     lat: 52.9516302,
+//     lng: 1.0106029,
+//   },
+//   {
+//     tree_id: "5",
+//     user_id: "1",
+//     type: "beech",
+//     year_planted: 2021,
+//     lat: 52.9408065,
+//     lng: 0.9393098,
+//   },
+//   {
+//     tree_id: "6",
+//     user_id: "1",i
+//     type: "beech",
+//     year_planted: 2021,
+//     lat: 52.9408065,
+//     lng: 0.9393098,
+//   },
+// ];
 
 const current_year = 2021;
 
-const SetTreeStage = (type, year_planted, value) => {
+const SetTreeStage = (tree_type, year_planted, value) => {
   let tree_age = current_year - year_planted;
-  if (type === "ash") {
-    if (tree_age + value === 0) {
+  if (tree_type === "ash") {
+    if (tree_age + value < 2) {
       return "0";
-    } else if (tree_age + value === 2) {
+    } else if (tree_age + value < 4) {
       return "1";
-    } else if (tree_age + value === 4) {
+    } else if (tree_age + value < 6) {
       return "2";
-    } else if (tree_age + value > 4) {
+    } else if (tree_age + value >= 6) {
       return "3";
     }
-  } else if (type === "pine") {
+  } else if (tree_type === "pine") {
     if (tree_age + value < 6) {
       return "0";
     } else if (tree_age + value < 14) {
@@ -161,7 +163,7 @@ const SetTreeStage = (type, year_planted, value) => {
     } else if (tree_age + value >= 32) {
       return "3";
     }
-  } else if (type === "beech") {
+  } else if (tree_type === "beech") {
     if (tree_age + value < 20) {
       return "0";
     } else if (tree_age + value < 32) {
@@ -180,8 +182,22 @@ const user_data = {
 
 const UserOrchard = () => {
   const classes = useStyles();
+  const [userData, setUserData] = useUserData();
+  const [tree_data, setTree_data] = useState([]);
 
   const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      if (userData["loggedIn"] === false) {
+        return;
+      }
+
+      let fetchData = await getTrees();
+      setTree_data(fetchData);
+    }
+    fetchData();
+  }, [userData]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -241,12 +257,16 @@ const UserOrchard = () => {
           defaultZoom={14}
         >
           {tree_data.map((tree) => {
-            const stage = SetTreeStage(tree.type, tree.year_planted, value); // stage changes according to value
+            const stage = SetTreeStage(
+              tree.tree_type,
+              tree.year_planted,
+              value
+            ); // stage changes according to value
             return (
               <AnyReactComponent lat={tree.lat} lng={tree.lng}>
                 <img
-                  src={tree.type + stage + ".png"}
-                  alt={tree.type}
+                  src={tree.tree_type + stage + ".png"}
+                  alt={tree.tree_type}
                   key={tree.id}
                   style={{
                     margin: "0",

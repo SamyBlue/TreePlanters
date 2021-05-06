@@ -74,15 +74,15 @@ class Trees(db.Model):
 @dataclass
 class Donations(db.Model):
     id: int
-    user_id: int
     donation_amount: float
+    username: str
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), unique=False, nullable=True)
     donation_amount = db.Column(db.Float, unique=False, nullable=False)
+    username = db.Column(db.String, db.ForeignKey('user.username'), nullable=True)
 
     create_fields = update_fields = ['user_id', 'donation_amount']
 
     def __repr__(self):
         return f"Donations('{self.username}', '{self.donation_amount}')"
 
-db.create_all()
+# db.create_all()

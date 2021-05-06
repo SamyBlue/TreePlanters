@@ -43,7 +43,7 @@ def login():
     content = request.get_json()
     user = User.query.filter_by(username=content['username']).first()
     if not user or not bcrypt.check_password_hash(user.password, content['password']):
-        return abort(403)
+        return 403
     login_user(user)
 
     response = {
@@ -82,9 +82,9 @@ def trees():
         db.session.commit()
         return 'Anonymous tree has been added'
 
-#! Broken, post works but get does not return sorted trees for user
+#* Route works
 @app.route("/trees/<user_id>", methods=['GET', 'POST'])
-@login_required
+@cross_origin()
 def userTrees(user_id):
     if request.method == 'GET':
         # return all trees belonging to user
@@ -122,7 +122,7 @@ def donations():
         # add anonymous donation to database
         content = request.get_json()
         donation = Donations(
-                        user_id = None, 
+                        username = "Anonymous", 
                         donation_amount = content['donation_amount']
                     )
         db.session.add(donation)
@@ -130,11 +130,12 @@ def donations():
         return 'Anonymous donation has been added'
         
 #* Route works
-@app.route('/donations/<user_id>', methods=['GET','POST'])
-def userDonations(user_id):
+@app.route('/donations/<username>', methods=['GET','POST'])
+@login_required #! if things break it may be this line
+def userDonations(username):
     if request.method == 'GET':
         # return all donations by the user
-        content = Donations.query.filter_by(user_id=current_user.id).all()
+        content = Donations.query.filter_by(username=current_user.username).all()
         return jsonify(content)
         
     elif request.method == 'POST':
@@ -143,7 +144,7 @@ def userDonations(user_id):
         content = request.get_json()
         newDonation = Donations(
             donation_amount = content['donation_amount'],
-            user_id = user_id)
+            username = username)
         db.session.add(newDonation)
         db.session.commit()
         return "user donated"
