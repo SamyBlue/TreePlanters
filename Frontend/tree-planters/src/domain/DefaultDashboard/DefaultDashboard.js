@@ -12,7 +12,7 @@ const CARBON_SAVED = 10; //! TEMP VALUE
 const MONEY_RAISED = 1; //! TEMP VALUE
 
 const lottieCircular = {
-	loop: true,
+	loop: false,
 	autoplay: true,
 	animationData: circularAnimation,
 };

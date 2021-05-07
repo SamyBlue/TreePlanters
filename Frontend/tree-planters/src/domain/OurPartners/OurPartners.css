@@ -6,3 +6,39 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+
+.PartnersTable {
+	display: table;
+}
+
+.Partners {
+	display: table-row;
+	/* padding: 1rem;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	flex-direction: row; */
+}
+
+.Partner {
+	display: table-cell;
+	width: 10%;
+}
+
+.Partner img {
+	width: 30%;
+	text-align: center;
+}
+/* .Partner h3 {
+	width: 30%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.Partner p {
+	width: 30%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+} */
