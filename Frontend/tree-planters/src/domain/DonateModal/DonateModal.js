@@ -9,6 +9,14 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import Lottie from "react-lottie";
+import animationData from "../../lotties/38217-money-growth.json";
+
+const lottieOptions = {
+	loop: true,
+	autoplay: true,
+	animationData: animationData,
+};
 
 const useStyles = makeStyles((theme) => ({
 	formControl: {
@@ -58,10 +66,17 @@ const Donate = ({ open, closeDonateModal }) => {
 						height: "60vh",
 						display: "table-cell",
 						margin: "0px",
-						borderStyle: "solid",
-						borderWidth: "thin",
 					}}
-				></div>
+				>
+					<div
+						style={{
+							position: "absolute",
+							height: "50vh",
+						}}
+					>
+						<Lottie options={lottieOptions} />
+					</div>
+				</div>
 				<div
 					style={{
 						height: "60vh",

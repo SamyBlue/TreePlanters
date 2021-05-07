@@ -3,6 +3,14 @@ import Modal from "../../components/Modal";
 import Tabs from "../../components/Tabs";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
+import Lottie from "react-lottie";
+import animationData from "../../lotties/43159-tree.json";
+
+const lottieOptions = {
+	loop: true,
+	autoplay: true,
+	animationData: animationData,
+};
 
 const LoginRegisterModal = ({ open, closeLoginModal }) => {
 	return (
@@ -16,14 +24,21 @@ const LoginRegisterModal = ({ open, closeLoginModal }) => {
 					style={{
 						position: "relative",
 						backgroundColor: "rgb(225,225,225)",
-						width: "200px",
+						width: "150px",
 						height: "50vh",
 						display: "table-cell",
 						margin: "0px",
-						borderStyle: "solid",
-						borderWidth: "thin",
 					}}
-				></div>
+				>
+					<div
+						style={{
+							position: "absolute",
+							height: "50vh",
+						}}
+					>
+						<Lottie options={lottieOptions} />
+					</div>
+				</div>
 				<div
 					style={{
 						display: "table-cell",
