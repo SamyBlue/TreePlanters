@@ -33,7 +33,7 @@ const FormSubmit = ({
 	const onClick = async () => {
 		setAttemptingSubmit(true);
 		try {
-			const submit = await onSubmit();
+			await onSubmit();
 		} catch {
 			setRetrySubmit(true);
 		}
