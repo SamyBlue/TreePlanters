@@ -7,9 +7,9 @@ import windmillAnimation from "../../lotties/15422-wind-mill-animation.json";
 import Fade from "@material-ui/core/Fade";
 import useInterval from "../../hooks/useInterval";
 
-const TREES_PLANTED = 1000; //! TEMP VALUE
-const CARBON_SAVED = 10; //! TEMP VALUE
-const MONEY_RAISED = 1; //! TEMP VALUE
+const TREES_PLANTED = 854; //! TEMP VALUE
+const CARBON_SAVED = 240; //! TEMP VALUE
+const MONEY_RAISED = 160; //! TEMP VALUE
 
 const lottieCircular = {
 	loop: false,

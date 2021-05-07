@@ -71,7 +71,7 @@ const marks = [
 const donation_data = [
 	{
 		donation_id: "1",
-		donation_amount: 10,
+		donation_amount: 110,
 	},
 	{
 		donation_id: "2",
@@ -324,12 +324,12 @@ const UserOrchard = () => {
 							<div className="OrchardCard">
 								<img src="pig.png" alt="piggy bank" />
 								<h3>Total Donations:</h3>
-								<h3>£{total_donations}</h3>
+								<h3>£12</h3>
 							</div>
 							<div className="OrchardCard">
 								<img src="foot.png" alt="carbon footprint" />
 								<h3>Carbon Saved:</h3>
-								<h3>£{total_donations}</h3>
+								<h3>{total_donations}kg</h3>
 							</div>
 						</div>
 					</div>

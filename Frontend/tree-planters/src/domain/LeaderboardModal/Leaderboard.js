@@ -145,7 +145,21 @@ const Leaderboard = () => {
 			const uniqueUsers = [...new Set(allUsers)];
 			console.log("UNIQUEUSERS: ", uniqueUsers);
 
-			let allUserDonations = [];
+			let allUserDonations = [
+				["Cupcake", 305],
+				["Donut", 452],
+				["Eclair", 262],
+				["Frozen yoghurt", 159],
+				["Gingerbread", 356],
+				["Honeycomb", 408],
+				["Ice cream sandwich", 237],
+				["Jelly Bean", 375],
+				["KitKat", 518],
+				["Lollipop", 392],
+				["Marshmallow", 318],
+				["Nougat", 360],
+				["Oreo", 437],
+			  ];
 			for (var i = 0; i < uniqueUsers.length; i++) {
 				let donationSum = 0;
 				for (var j = 0; j < donations.length; j++) {
