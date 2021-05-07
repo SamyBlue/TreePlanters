@@ -49,31 +49,54 @@ const Donate = ({ open, closeDonateModal }) => {
 
 	return (
 		<Modal open={open} closeModal={closeDonateModal}>
-			<div style={{ height: "50vh", width: 500,  }}>
-				<h2>Thanks for your contribution</h2>
-				<Form formFields={formFields} setFormFields={setFormFields} />
-				<FormControl className={classes.formControl}>
-					<InputLabel id="demo-simple-select-label">
-						Tree Type
-					</InputLabel>
-					<Select
-						labelId="demo-simple-select-label"
-						id="demo-simple-select"
-						value={tree_type}
-						onChange={handleChange}
-					>
-						<MenuItem value={"ash"}>Ash</MenuItem>
-						<MenuItem value={"beech"}>Beech</MenuItem>
-						<MenuItem value={"pine"}>Pine</MenuItem>
-					</Select>
-				</FormControl>
-				<FormSubmit
-					label="Send"
-					attemptSubmitMsg="Sending..."
-					failedSubmitMsg="Some of your information isn't correct. Please try again."
-					color="#2e963a"
-					onSubmit={onSubmit}
-				/>
+			<div style={{ display: "table-row" }}>
+				<div
+					style={{
+						position: "relative",
+						backgroundColor: "rgb(225,225,225)",
+						width: "200px",
+						height: "60vh",
+						display: "table-cell",
+						margin: "0px",
+						borderStyle: "solid",
+						borderWidth: "thin",
+					}}
+				></div>
+				<div
+					style={{
+						height: "60vh",
+						width: 500,
+						display: "table-cell",
+					}}
+				>
+					<h2>Thanks for your contribution</h2>
+					<Form
+						formFields={formFields}
+						setFormFields={setFormFields}
+					/>
+					<FormControl className={classes.formControl}>
+						<InputLabel id="demo-simple-select-label">
+							Tree Type
+						</InputLabel>
+						<Select
+							labelId="demo-simple-select-label"
+							id="demo-simple-select"
+							value={tree_type}
+							onChange={handleChange}
+						>
+							<MenuItem value={"ash"}>Ash</MenuItem>
+							<MenuItem value={"beech"}>Beech</MenuItem>
+							<MenuItem value={"pine"}>Pine</MenuItem>
+						</Select>
+					</FormControl>
+					<FormSubmit
+						label="Send"
+						attemptSubmitMsg="Sending..."
+						failedSubmitMsg="Some of your information isn't correct. Please try again."
+						color="#2e963a"
+						onSubmit={onSubmit}
+					/>
+				</div>
 			</div>
 		</Modal>
 	);

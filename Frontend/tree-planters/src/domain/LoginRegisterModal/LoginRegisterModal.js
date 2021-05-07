@@ -20,6 +20,8 @@ const LoginRegisterModal = ({ open, closeLoginModal }) => {
 						height: "50vh",
 						display: "table-cell",
 						margin: "0px",
+						borderStyle: "solid",
+						borderWidth: "thin",
 					}}
 				></div>
 				<div
