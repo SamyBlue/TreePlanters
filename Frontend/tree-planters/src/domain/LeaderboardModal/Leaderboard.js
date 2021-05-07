@@ -130,6 +130,26 @@ const Leaderboard = () => {
       return [obj["username"], obj["donation_amount"]];
     });
 
+    donations = donations.filter( i => i[0] !== 'Anonymous'); 
+
+    const allUsers = donations.map(x => x[0]);
+    console.log('ALLUSERS: ', allUsers);
+    const uniqueUsers = [...new Set(allUsers)];
+    console.log('UNIQUEUSERS: ', uniqueUsers);
+
+    let allUserDonations = [];
+    for (var i = 0; i < uniqueUsers.length; i++) {
+      let donationSum = 0 ;
+      for (var j = 0; j < donations.length; j++) {
+        if (uniqueUsers[i] === donations[j][0]) {
+          donationSum += donations[j][1];
+        };
+      };
+      allUserDonations.push([uniqueUsers[i], donationSum]);
+    };
+
+    donations = allUserDonations;
+    
     donations = donations.sort(function (a, b) {
       return b[1] - a[1];
     });
