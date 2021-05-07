@@ -45,7 +45,7 @@ const RegisterPage = ({ closeModal }) => {
 	};
 
 	return (
-		<div>
+		<div style={{ height: "50vh" }}>
 			<h2>Welcome</h2>
 			<Form formFields={formFields} setFormFields={setFormFields} />
 			<FormSubmit

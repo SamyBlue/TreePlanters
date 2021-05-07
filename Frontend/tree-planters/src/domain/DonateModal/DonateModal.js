@@ -49,28 +49,32 @@ const Donate = ({ open, closeDonateModal }) => {
 
 	return (
 		<Modal open={open} closeModal={closeDonateModal}>
-			<h2>Thanks for your contribution</h2>
-			<Form formFields={formFields} setFormFields={setFormFields} />
-			<FormControl className={classes.formControl}>
-				<InputLabel id="demo-simple-select-label">Tree Type</InputLabel>
-				<Select
-					labelId="demo-simple-select-label"
-					id="demo-simple-select"
-					value={tree_type}
-					onChange={handleChange}
-				>
-					<MenuItem value={"ash"}>Ash</MenuItem>
-					<MenuItem value={"beech"}>Beech</MenuItem>
-					<MenuItem value={"pine"}>Pine</MenuItem>
-				</Select>
-			</FormControl>
-			<FormSubmit
-				label="Send"
-				attemptSubmitMsg="Sending..."
-				failedSubmitMsg="Some of your information isn't correct. Please try again."
-				color="#2e963a"
-				onSubmit={onSubmit}
-			/>
+			<div style={{ height: "50vh", width: 500,  }}>
+				<h2>Thanks for your contribution</h2>
+				<Form formFields={formFields} setFormFields={setFormFields} />
+				<FormControl className={classes.formControl}>
+					<InputLabel id="demo-simple-select-label">
+						Tree Type
+					</InputLabel>
+					<Select
+						labelId="demo-simple-select-label"
+						id="demo-simple-select"
+						value={tree_type}
+						onChange={handleChange}
+					>
+						<MenuItem value={"ash"}>Ash</MenuItem>
+						<MenuItem value={"beech"}>Beech</MenuItem>
+						<MenuItem value={"pine"}>Pine</MenuItem>
+					</Select>
+				</FormControl>
+				<FormSubmit
+					label="Send"
+					attemptSubmitMsg="Sending..."
+					failedSubmitMsg="Some of your information isn't correct. Please try again."
+					color="#2e963a"
+					onSubmit={onSubmit}
+				/>
+			</div>
 		</Modal>
 	);
 };
