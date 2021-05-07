@@ -11,13 +11,15 @@ const ContentTiles = () => {
 			color: "#214034",
 		},
 		{
-			image: "nature2.gif",
+			image:
+				"https://media4.giphy.com/media/DCgQCpNAN7JvMh4Eko/giphy.gif?cid=ecf05e47117bx738zo1xghuse44se3ulg0d6nf443ewt8yu7&rid=giphy.gif",
 			header: "Trees release chemicals that can make us happier...",
 			text: `It’s been proven that just looking at trees can make us feel happier, less stressed and more creative. That’s partly because they release chemicals called phytoncides. Research has shown that when we breathe them in, it can have amazing effects, reducing blood pressure, lowering anxiety levels and increasing pain threshold – and they can even boost our levels of anti-cancer proteins.`,
 			color: "#432e14",
 		},
 		{
-			image: "nature3.gif",
+			image:
+				"https://media0.giphy.com/media/kAC9RyL05kwYuJK7ju/giphy.gif?cid=790b76113f919753fae00a17d350dba4ef96b211c5ed99ae&rid=giphy.gif",
 			header: "Some trees don’t have a growth ceiling...",
 			text: `In fact, they’ll only stop growing when their highest leaves start dying of thirst. That happens when the atmospheric pressure at such a high altitude stops them moving nutrients and water from the roots all the way up to the leaves.`,
 			color: "#6cbe30",

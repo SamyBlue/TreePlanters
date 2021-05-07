@@ -11,6 +11,7 @@ import { UserDataProvider } from "./hooks/useUserData";
 import LeaderboardModal from "./domain/LeaderboardModal/LeaderboardModal";
 import About from "./domain/About/About";
 import Footer from "./components/Footer";
+import OurPartners from "./domain/OurPartners/OurPartners";
 
 function App() {
 	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
@@ -80,6 +81,7 @@ function App() {
 				<Title />
 				<UserOrchard />
 				<DefaultDashboard openDonateModal={openDonateModal} />
+				<OurPartners />
 				<ContentTiles />
 				<About />
 				<Footer />

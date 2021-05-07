@@ -19,7 +19,7 @@ const Title = () => {
 			<div id="Sun">
 				<Lottie options={lottieOptions} />
 			</div>
-			<h1 id="Subtitle">Join our mission to save the worlds trees</h1>
+			<h1 id="Subtitle">Join our mission to save the world's trees</h1>
 			<img
 				style={{ marginTop: `${scrollPosition * 0.5}px` }}
 				id="Cloud1"
