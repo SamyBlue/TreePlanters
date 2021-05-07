@@ -176,10 +176,6 @@ const SetTreeStage = (tree_type, year_planted, value) => {
 	}
 };
 
-const user_data = {
-	username: "Test User",
-};
-
 const UserOrchard = () => {
 	const classes = useStyles();
 	const [userData, setUserData] = useUserData();
@@ -249,82 +245,97 @@ const UserOrchard = () => {
 	);
 
 	return (
-		<>
-			<h2 className="OrchardTitle">{user_data.username}'s Orchard</h2>
-			<div style={{ height: "500px", width: "100%" }}>
-				<GoogleMapReact
-					bootstrapURLKeys={{
-						key: "AIzaSyCzSDLwakvV-7nq3GXYc1sAapKFiAL8Fd4",
-					}}
-					defaultCenter={{ lat: 52.945, lng: 0.986 }}
-					defaultZoom={14}
-				>
-					{tree_data.map((tree) => {
-						const stage = SetTreeStage(
-							tree.tree_type,
-							tree.year_planted,
-							value
-						); // stage changes according to value
-						return (
-							<AnyReactComponent lat={tree.lat} lng={tree.lng}>
-								<img
-									src={tree.tree_type + stage + ".png"}
-									alt={tree.tree_type}
-									key={tree.id}
-									style={{
-										margin: "0",
-										position: "absolute",
-										top: "50%",
-										left: "50%",
-										transform: "translate(-50%, -50%)",
-									}}
-								/>
-							</AnyReactComponent>
-						);
-					})}
-				</GoogleMapReact>
-			</div>
+		<div>
+			{userData["loggedIn"] && (
+				<div>
+					<h2 className="OrchardTitle">
+						{userData.username}'s Orchard
+					</h2>
+					<div style={{ height: "500px", width: "100%" }}>
+						<GoogleMapReact
+							bootstrapURLKeys={{
+								key: "AIzaSyCzSDLwakvV-7nq3GXYc1sAapKFiAL8Fd4",
+							}}
+							defaultCenter={{ lat: 52.945, lng: 0.986 }}
+							defaultZoom={14}
+						>
+							{tree_data.map((tree) => {
+								const stage = SetTreeStage(
+									tree.tree_type,
+									tree.year_planted,
+									value
+								); // stage changes according to value
+								return (
+									<AnyReactComponent
+										lat={tree.lat}
+										lng={tree.lng}
+									>
+										<img
+											src={
+												tree.tree_type + stage + ".png"
+											}
+											alt={tree.tree_type}
+											key={tree.id}
+											style={{
+												margin: "0",
+												position: "absolute",
+												top: "50%",
+												left: "50%",
+												transform:
+													"translate(-50%, -50%)",
+											}}
+										/>
+									</AnyReactComponent>
+								);
+							})}
+						</GoogleMapReact>
+					</div>
 
-			<div className="Slider">
-				<div className={classes.root}>
-					<Typography id="discrete-slider" gutterBottom>
-						<h2>Time Elapsed - See Your Tree Grow In Real Time!</h2>
-					</Typography>
-					<ThemeProvider theme={muiTheme}>
-						<Slider
-							value={value}
-							onChange={handleChange}
-							defaultValue={0}
-							getAriaValueText={valuetext}
-							aria-labelledby="discrete-slider"
-							valueLabelDisplay="auto"
-							step={2}
-							marks={marks}
-							min={0}
-							max={60}
-							id="slider"
-						/>
-					</ThemeProvider>
+					<div className="Slider">
+						<div className={classes.root}>
+							<Typography id="discrete-slider" gutterBottom>
+								<h2>
+									Time Elapsed - See Your Tree Grow In Real
+									Time!
+								</h2>
+							</Typography>
+							<ThemeProvider theme={muiTheme}>
+								<Slider
+									value={value}
+									onChange={handleChange}
+									defaultValue={0}
+									getAriaValueText={valuetext}
+									aria-labelledby="discrete-slider"
+									valueLabelDisplay="auto"
+									step={2}
+									marks={marks}
+									min={0}
+									max={60}
+									id="slider"
+								/>
+							</ThemeProvider>
+						</div>
+						<div className="UserOrchard">
+							<div className="OrchardCard">
+								<img src="beech3.png" alt="growing tree" />
+								<h3>Total Trees Planted:</h3>
+								<h3>{tree_data.length}</h3>
+							</div>
+							<div className="OrchardCard">
+								<img src="pig.png" alt="piggy bank" />
+								<h3>Total Donations:</h3>
+								<h3>£{total_donations}</h3>
+							</div>
+							<div className="OrchardCard">
+								<img src="foot.png" alt="carbon footprint" />
+								<h3>Carbon Saved:</h3>
+								<h3>£{total_donations}</h3>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="UserOrchard">
-					<div className="OrchardCard">
-						<img src="beech3.png" alt="growing tree" />
-						<h3>Total Trees Planted:</h3>
-						<h3>{tree_data.length}</h3>
-					</div>
-					<div className="OrchardCard">
-						<img src="pig.png" alt="piggy bank" />
-						<h3>Total Donations:</h3>
-						<h3>£{total_donations}</h3>
-					</div>
-					<div className="OrchardCard">
-						<img src="foot.png" alt="carbon footprint" />
-						<h3>Carbon Saved:</h3>
-						<h3>£{total_donations}</h3>
-					</div>
-				</div>
-			</div>
-		</>
+			)}
+		</div>
 	);
 };
 

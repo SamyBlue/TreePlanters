@@ -1,41 +1,33 @@
-import React from 'react';
-import './ContentTiles.css';
-import Tile from '../../components/Tile';
+import React from "react";
+import "./ContentTiles.css";
+import Tile from "../../components/Tile";
 
 const ContentTiles = () => {
 	const content = [
 		{
-			image: 'https://c.stocksy.com/a/u8V100/z9/358044.jpg',
-			header: 'Saving the planet, one tree at a time...',
-			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
-            year once fully grown. Over a lifetime of 100 years, one tree could
-            absorb around a tonne of CO2.`,
-			color: '#214034',
+			image: "nature1.gif",
+			header: "There are more trees than people...",
+			text: `A study has found that there are over 3 trillion trees on Earth – which is 422 times as many as there are people. That figure sounds pretty impressive, until you consider that since the start of human civilization (about 11,700 years ago) the total number of trees on Earth has fallen by around 46%.`,
+			color: "#214034",
 		},
 		{
-			image:
-				'https://img.chooseacottage.co.uk/property/rof/840/rofo-11b_21.jpg',
-			header: 'Saving the planet, one tree at a time...',
-			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
-            year once fully grown. Over a lifetime of 100 years, one tree could
-            absorb around a tonne of CO2.`,
-			color: '#432e14',
+			image: "nature2.gif",
+			header: "Trees release chemicals that can make us happier...",
+			text: `It’s been proven that just looking at trees can make us feel happier, less stressed and more creative. That’s partly because they release chemicals called phytoncides. Research has shown that when we breathe them in, it can have amazing effects, reducing blood pressure, lowering anxiety levels and increasing pain threshold – and they can even boost our levels of anti-cancer proteins.`,
+			color: "#432e14",
 		},
 		{
-			image:
-				'https://assets.weforum.org/article/image/rbMwmoo90af-EroZs1TPRvEZFaOrpXGq7arIzFJsmSI.jpg',
-			header: 'Saving the planet, one tree at a time...',
-			text: `A typical tree can absorb around 21 kilograms of carbon dioxide per
-            year once fully grown. Over a lifetime of 100 years, one tree could
-            absorb around a tonne of CO2.`,
-			color: '#6cbe30',
+			image: "nature3.gif",
+			header: "Some trees don’t have a growth ceiling...",
+			text: `In fact, they’ll only stop growing when their highest leaves start dying of thirst. That happens when the atmospheric pressure at such a high altitude stops them moving nutrients and water from the roots all the way up to the leaves.`,
+			color: "#6cbe30",
 		},
 	];
 
 	let reversed = true; //Allows tiles to alternate in a nice pattern
 
 	return (
-		<div className='ContentTiles'>
+		<div className="ContentTiles">
 			{content.map((tile) => {
 				reversed = !reversed;
 				return (

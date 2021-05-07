@@ -65,32 +65,23 @@ function App() {
 					openDonateModal={openDonateModal}
 					openLeaderboardModal={openLeaderboardModal}
 				/>
-
 				<LeaderboardModal
 					open={LeaderboardModalOpen}
 					closeLeaderboardModal={closeLeaderboardModal}
 				/>
-
 				<LoginRegisterModal
 					open={loginModalOpen}
 					closeLoginModal={closeLoginModal}
 				/>
-
 				<DonateModal
 					open={donateModalOpen}
 					closeDonateModal={closeDonateModal}
 				/>
-
 				<Title />
-
-				<DefaultDashboard openDonateModal={openDonateModal} />
-
 				<UserOrchard />
-
+				<DefaultDashboard openDonateModal={openDonateModal} />
 				<ContentTiles />
-
 				<About />
-
 				<Footer />
 			</UserDataProvider>
 		</div>
