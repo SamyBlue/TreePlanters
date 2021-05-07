@@ -14,7 +14,6 @@ import FirstPageIcon from "@material-ui/icons/FirstPage";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
-import { useGlobalData } from "../../hooks/useGlobalData";
 import getDonations from "../../services/donationService";
 
 const useStyles1 = makeStyles((theme) => ({
@@ -120,7 +119,6 @@ const Leaderboard = () => {
   const classes = useStyles2();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [globalData, setGlobalData] = useGlobalData();
   const [rows, setRows] = useState([]);
 
   useEffect(() => {

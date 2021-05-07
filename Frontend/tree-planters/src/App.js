@@ -11,44 +11,44 @@ import { UserDataProvider } from "./hooks/useUserData";
 import LeaderboardModal from "./domain/LeaderboardModal/LeaderboardModal";
 import About from "./domain/About/About";
 import Footer from "./components/Footer";
-import { GlobalDataProvider } from "./hooks/useGlobalData";
 
 function App() {
-  const [loginModalOpen, setLoginModalOpen] = React.useState(false);
-  const [donateModalOpen, setDonateModalOpen] = React.useState(false);
-  const [LeaderboardModalOpen, setLeaderboardModalOpen] = React.useState(false);
+	const [loginModalOpen, setLoginModalOpen] = React.useState(false);
+	const [donateModalOpen, setDonateModalOpen] = React.useState(false);
+	const [LeaderboardModalOpen, setLeaderboardModalOpen] = React.useState(
+		false
+	);
 
-  const openLoginModal = () => {
-    setLoginModalOpen(true);
-  };
+	const openLoginModal = () => {
+		setLoginModalOpen(true);
+	};
 
-  const closeLoginModal = () => {
-    setLoginModalOpen(false);
-  };
+	const closeLoginModal = () => {
+		setLoginModalOpen(false);
+	};
 
-  const openDonateModal = () => {
-    setDonateModalOpen(true);
-  };
+	const openDonateModal = () => {
+		setDonateModalOpen(true);
+	};
 
-  const closeDonateModal = () => {
-    setDonateModalOpen(false);
-  };
+	const closeDonateModal = () => {
+		setDonateModalOpen(false);
+	};
 
-  const openLeaderboardModal = () => {
-    setLeaderboardModalOpen(true);
-  };
+	const openLeaderboardModal = () => {
+		setLeaderboardModalOpen(true);
+	};
 
-  const closeLeaderboardModal = () => {
-    setLeaderboardModalOpen(false);
-  };
+	const closeLeaderboardModal = () => {
+		setLeaderboardModalOpen(false);
+	};
 
-  return (
-    <div className="App">
-      <GlobalDataProvider>
-        <UserDataProvider>
-          {/* Main app 
+	return (
+		<div className="App">
+			<UserDataProvider>
+				{/* Main app 
 			<StickyAppBar />
-      
+			
 			<UserDashboard />*
 
 			<DefaultDashboard />
@@ -60,42 +60,41 @@ function App() {
 			<Footer />*Uses accordion.js
 			*/}
 
-          <StickyAppBar
-            openLoginModal={openLoginModal}
-            openDonateModal={openDonateModal}
-            openLeaderboardModal={openLeaderboardModal}
-          />
+				<StickyAppBar
+					openLoginModal={openLoginModal}
+					openDonateModal={openDonateModal}
+					openLeaderboardModal={openLeaderboardModal}
+				/>
 
-          <LeaderboardModal
-            open={LeaderboardModalOpen}
-            closeLeaderboardModal={closeLeaderboardModal}
-          />
+				<LeaderboardModal
+					open={LeaderboardModalOpen}
+					closeLeaderboardModal={closeLeaderboardModal}
+				/>
 
-          <LoginRegisterModal
-            open={loginModalOpen}
-            closeLoginModal={closeLoginModal}
-          />
+				<LoginRegisterModal
+					open={loginModalOpen}
+					closeLoginModal={closeLoginModal}
+				/>
 
-          <DonateModal
-            open={donateModalOpen}
-            closeDonateModal={closeDonateModal}
-          />
+				<DonateModal
+					open={donateModalOpen}
+					closeDonateModal={closeDonateModal}
+				/>
 
-          <Title />
+				<Title />
 
-          <DefaultDashboard openDonateModal={openDonateModal} />
+				<DefaultDashboard openDonateModal={openDonateModal} />
 
-          <UserOrchard />
+				<UserOrchard />
 
-          <ContentTiles />
+				<ContentTiles />
 
-          <About />
+				<About />
 
-          <Footer />
-        </UserDataProvider>
-      </GlobalDataProvider>
-    </div>
-  );
+				<Footer />
+			</UserDataProvider>
+		</div>
+	);
 }
 
 export default App;
