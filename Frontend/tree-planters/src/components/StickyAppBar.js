@@ -9,6 +9,7 @@ import Badge from "@material-ui/core/Badge";
 import IconButton from "@material-ui/core/IconButton";
 import { useUserData } from "../hooks/useUserData";
 import logout from "../services/logoutService";
+import useScrollPos from '../hooks/useScrollPos';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -28,21 +29,9 @@ export default function StickyAppBar({
 	openLeaderboardModal,
 }) {
 	const classes = useStyles();
+	const [userData, setUserData] = useUserData()
 
-	const [scrollPosition, setScrollPosition] = React.useState(0);
-	const handleScroll = () => {
-		const position = window.pageYOffset;
-		setScrollPosition(position);
-	};
-	const [userData, setUserData] = useUserData();
-
-	React.useEffect(() => {
-		window.addEventListener("scroll", handleScroll, { passive: true });
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
+	const scrollPosition = useScrollPos();
 
 	const performLogout = async () => {
 		await logout();
