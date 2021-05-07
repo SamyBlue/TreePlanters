@@ -9,7 +9,7 @@ import Badge from "@material-ui/core/Badge";
 import IconButton from "@material-ui/core/IconButton";
 import { useUserData } from "../hooks/useUserData";
 import logout from "../services/logoutService";
-import useScrollPos from '../hooks/useScrollPos';
+import useScrollPos from "../hooks/useScrollPos";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -29,7 +29,7 @@ export default function StickyAppBar({
 	openLeaderboardModal,
 }) {
 	const classes = useStyles();
-	const [userData, setUserData] = useUserData()
+	const [userData, setUserData] = useUserData();
 
 	const scrollPosition = useScrollPos();
 
@@ -77,14 +77,14 @@ export default function StickyAppBar({
 					</IconButton>
 					<Button
 						className={classes.menuButton}
-						color={"#699a30"}
+						color={"#438B22"}
 						onClick={openLeaderboardModal}
 					>
 						Leaderboard
 					</Button>
 					<Button
 						className={classes.menuButton}
-						color={"#699a30"}
+						color={"#00552a"}
 						onClick={openDonateModal}
 					>
 						Donate
